@@ -1,2 +1,17 @@
-<editor apiKey="no-api-key" [init]="tinymceConfig"></editor>
+<div class="editor-wrapper">
+  <h2>XML Editor</h2>
+   <button (click)="fileInput.click()">Browse XML</button>
+   <input type="file" #fileInput accept=".xml" (change)="onFileSelected($event)" style="display: none;" />
+  <editor
+    [init]="tinymceConfig"
+    [apiKey]="apiKey"
+    [initialValue]="xmlContent || defaultContent">
+  </editor>
 
+  <button class="convert-btn" (click)="onConvertClicked()">המר ל-XML</button>
+
+  <div class="output-box" *ngIf="convertedXmlContent">
+    <h3>XML מומרים:</h3>
+    <pre>{{ convertedXmlContent }}</pre>
+  </div>
+</div>
