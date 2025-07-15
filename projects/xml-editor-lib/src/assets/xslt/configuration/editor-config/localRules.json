@@ -1,0 +1,543 @@
+{
+    "rules": {
+        "_docType_": "Document hierarchy rules",
+        "act": {
+            "children": [
+                "coverPage",
+                "preface",
+                "preamble",
+                "body",
+                "conclusions",
+                "attachments",
+                "components"
+            ],
+            "outlineDisplay": true
+        },
+        "bill": {
+            "children": [
+                "coverPage",
+                "preface",
+                "preamble",
+                "body",
+                "conclusions",
+                "attachments",
+                "components"
+            ],
+            "outlineDisplay": true
+        },
+        "doc": {
+            "children": [
+                "coverPage",
+                "preface",
+                "preamble",
+                "mainBody",
+                "conclusions",
+                "attachments",
+                "components"
+            ],
+            "outlineDisplay": true
+        },
+        "amendment": {
+            "children": [
+                "coverPage",
+                "preface",
+                "amendmentBody",
+                "conclusions",
+                "attachments",
+                "components"
+            ]
+        },
+        "statement": {
+            "children": [
+                "coverPage",
+                "preface",
+                "preamble",
+                "mainBody",
+                "conclusions",
+                "attachments",
+                "components"
+            ]
+        },
+        "debate": {
+            "children": [
+                "coverPage",
+                "preface",
+                "debateBody",
+                "conclusions",
+                "attachments",
+                "components"
+            ]
+        },
+        "debateReport": {
+            "children": [
+                "coverPage",
+                "preface",
+                "preamble",
+                "mainBody",
+                "conclusions",
+                "attachments",
+                "components"
+            ]
+        },
+        "documentCollection": {
+            "children": [
+                "coverPage",
+                "preface",
+                "preamble",
+                "collectionBody",
+                "conclusions",
+                "attachments",
+                "components"
+            ]
+        },
+        "judgment": {
+            "children": [
+                "coverPage",
+                "header",
+                "judgmentBody",
+                "conclusions",
+                "attachments",
+                "components"
+            ]
+        },
+        "_containers_": "Containers hierarchy rules",
+        "collectionBody": {
+            "chiildren": [
+                "component"
+            ]
+        },
+        "components": {
+            "children": [
+                "component"
+            ]
+        },
+        "component": {
+            "chiildren": [
+                "doc",
+                "act",
+                "bill"
+            ]
+        },
+        "coverPage": {
+            "children": [
+                "p"
+            ],
+            "outlineDisplay": true
+        },
+        "preface": {
+            "children": [
+                "p"
+            ],
+            "outlineDisplay": true
+        },
+        "preamble": {
+            "children": [
+                "recitals",
+                "citations",
+                "formula",
+                "container",
+                "p"
+            ],
+            "outlineDisplay": true
+        },
+        "body": {
+            "children": [
+                "section",
+                "article",
+                "paragraph",
+                "list"
+            ],
+            "outlineDisplay": true
+        },
+        "conclusions": {
+            "children": [
+                "p"
+            ]
+        },
+        "section": {
+            "children": [
+                "num",
+                "heading",
+                "article",
+                "chapter"
+            ],
+            "outlineDisplay": true
+        },
+        "article": {
+            "baseElement": true,
+            "children": [
+                "num",
+                "heading",
+                "clause",
+                "paragraph",
+                "content"
+            ],
+            "outlineDisplay": true
+        },
+        "paragraph": {
+            "children": [
+                "num",
+                "heading",
+                "content",
+                "list"
+            ],
+            "outlineDisplay": true
+        },
+        "clause": {
+            "children": [
+                "num",
+                "content"
+            ],
+            "outlineDisplay": true
+        },
+        "list": {
+            "children": [
+                "heading",
+                "point",
+                "intro"
+            ],
+            "outlineDisplay": true
+        },
+        "point": {
+            "children": [
+                "num",
+                "content"
+            ],
+            "outlineDisplay": true
+        },
+        "intro": {
+            "children": [
+                "p"
+            ],
+            "outlineDisplay": true
+        },
+        "content": {
+            "children": [
+                "p"
+            ],
+            "outlineDisplay": false
+        },
+        "p": {
+            "children": [
+                "docTitle",
+                "docType",
+                "container",
+                "docNumber",
+                "table"
+            ],
+            "outlineDisplay": true
+        },
+        "docTitle": {
+            "children": [
+                "docType"
+            ],
+            "outlineDisplay": true
+        },
+        "formula": {
+            "children": [
+                "p"
+            ],
+            "outlineDisplay": true
+        },
+        "container": {
+            "children": [
+                "p"
+            ],
+            "outlineDisplay": true
+        },
+        "attachments": {
+            "children": [
+                "attachment"
+            ],
+            "outlineDisplay": true
+        },
+        "attachment": {
+            "children": [
+                "doc"
+            ],
+            "outlineDisplay": true
+        },
+        "table": {
+			"children": ["caption", "thead", "tbody", "tfoot", "tr", "th", "td"],
+			"outlineDisplay": false
+		},
+		"thead": {
+			"children": ["tr"],
+			"outlineDisplay": false
+		},
+		"tbody": {
+			"children": ["tr"],
+			"outlineDisplay": false
+		},
+		"tfoot": {
+			"children": ["tr"],
+			"outlineDisplay": false
+		},
+		"tr": {
+			"children": ["td"],
+			"outlineDisplay": false
+		},
+		"caption": {
+			"children": [],
+			"outlineDisplay": false
+		},
+		"td": {
+			"children": ["p"],
+			"outlineDisplay": false
+		}
+    },
+    "replacements": [
+        {
+            "id": "1-chapter+empty",
+            "selection": "chapter",
+            "replacement": "empty",
+            "action": "",
+            "_doc": "confirm then empty content but keep num, heading and one empty article"
+        },
+        {
+            "id": "2-chapter+chapter",
+            "selection": "chapter",
+            "replacement": "chapter",
+            "action": "",
+            "_doc": "append new chapter after this one"
+        },
+        {
+            "id": "3-chapter+article",
+            "selection": "chapter",
+            "replacement": "article",
+            "action": "",
+            "_doc": "append article at end of section"
+        },
+        {
+            "id": "4-chapter+clause",
+            "selection": "chapter",
+            "replacement": "clause",
+            "action": "REJECT",
+            "_doc": ""
+        },
+        {
+            "id": "5-chapter+text",
+            "selection": "chapter",
+            "replacement": "text",
+            "action": "REJECT",
+            "_doc": ""
+        },
+        {
+            "id": "6-chapter+inline",
+            "selection": "chapter",
+            "replacement": "inline",
+            "action": "REJECT",
+            "_doc": ""
+        },
+        {
+            "id": "7-chapter-content+empty",
+            "selection": "chapter-content",
+            "replacement": "empty",
+            "action": "",
+            "_doc": "remove selection"
+        },
+        {
+            "id": "8-chapter-content+chapter",
+            "selection": "chapter-content",
+            "replacement": "chapter",
+            "action": "",
+            "_doc": "append new chapter after this one"
+        },
+        {
+            "id": "9-chapter-content+article",
+            "selection": "chapter-content",
+            "replacement": "article",
+            "action": "",
+            "_doc": "wrap content inside arricle by closing article before selection and opening article at the end of selection"
+        },
+        {
+            "id": "10-chapter-content+clause",
+            "selection": "chapter-content",
+            "replacement": "clause",
+            "action": "REJECT",
+            "_doc": ""
+        },
+        {
+            "id": "11-chapter-content+text",
+            "selection": "chapter-content",
+            "replacement": "text",
+            "action": "",
+            "_doc": "if legal for other rules"
+        },
+        {
+            "id": "12-chapter-content+inline",
+            "selection": "chapter-content",
+            "replacement": "inline",
+            "action": "",
+            "_doc": "if legal for other rules"
+        },
+        {
+            "id": "13-article+empty",
+            "selection": "article",
+            "replacement": "empty",
+            "action": "",
+            "_doc": "confirm then empty content but keep num, heading and one empty clause"
+        },
+        {
+            "id": "14-article+chapter",
+            "selection": "article",
+            "replacement": "chapter",
+            "action": "",
+            "_doc": "wrap article inside chapter"
+        },
+        {
+            "id": "15-article+article",
+            "selection": "article",
+            "replacement": "article",
+            "action": "",
+            "_doc": "append new article after this one"
+        },
+        {
+            "id": "16-article+clause",
+            "selection": "article",
+            "replacement": "clause",
+            "action": "",
+            "_doc": "append clause at end of article"
+        },
+        {
+            "id": "17-article+text",
+            "selection": "article",
+            "replacement": "text",
+            "action": "REJECT",
+            "_doc": ""
+        },
+        {
+            "id": "18-article+inline",
+            "selection": "article",
+            "replacement": "inline",
+            "action": "REJECT",
+            "_doc": ""
+        },
+        {
+            "id": "19-article-content+empty",
+            "selection": "article-content",
+            "replacement": "empty",
+            "action": "remove selection",
+            "_doc": ""
+        },
+        {
+            "id": "20-article-content+chapter",
+            "selection": "article-content",
+            "replacement": "chapter",
+            "action": "",
+            "_doc": "wrap article inside chapter"
+        },
+        {
+            "id": "21-article-content+article",
+            "selection": "article-content",
+            "replacement": "article",
+            "action": "",
+            "_doc": "append new article after this one"
+        },
+        {
+            "id": "22-article-content+clause",
+            "selection": "article-content",
+            "replacement": "clause",
+            "action": "",
+            "_doc": "wrap content inside clause by closing clause before selection and opening clause at the end of selection"
+        },
+        {
+            "id": "23-article-content+text",
+            "selection": "article-content",
+            "replacement": "text",
+            "action": "",
+            "_doc": "if legal for other rules"
+        },
+        {
+            "id": "24-article-content+inline",
+            "selection": "article-content",
+            "replacement": "inline",
+            "action": "",
+            "_doc": "if legal for other rules"
+        },
+        {
+            "id": "25-clause+empty",
+            "selection": "clause",
+            "replacement": "empty",
+            "action": "",
+            "_doc": "empty content but keep num"
+        },
+        {
+            "id": "26-clause+chapter",
+            "selection": "clause",
+            "replacement": "chapter",
+            "action": "",
+            "_doc": "wrap clause inside article and wrap article inside chapter"
+        },
+        {
+            "id": "27-clause+article",
+            "selection": "clause",
+            "replacement": "article",
+            "action": "",
+            "_doc": "wrap clause inside article"
+        },
+        {
+            "id": "28-clause+clause",
+            "selection": "clause",
+            "replacement": "clause",
+            "action": "",
+            "_doc": "append new clause after this one"
+        },
+        {
+            "id": "29-clause+text",
+            "selection": "clause",
+            "replacement": "text",
+            "action": "",
+            "_doc": "replace content with replacement"
+        },
+        {
+            "id": "30-clause+inline",
+            "selection": "clause",
+            "replacement": "inline",
+            "action": "",
+            "_doc": "replace content with replacement"
+        },
+        {
+            "id": "31-clause-content+empty",
+            "selection": "clause-content",
+            "replacement": "empty",
+            "action": "",
+            "_doc": "remove selection"
+        },
+        {
+            "id": "32-clause-content+chapter",
+            "selection": "clause-content",
+            "replacement": "chapter",
+            "action": "",
+            "_doc": "wrap clause inside article and wrap article inside chapter"
+        },
+        {
+            "id": "33-clause-content+article",
+            "selection": "clause-content",
+            "replacement": "article",
+            "action": "",
+            "_doc": "wrap clause inside article"
+        },
+        {
+            "id": "34-clause-content+clause",
+            "selection": "clause-content",
+            "replacement": "clause",
+            "action": "",
+            "_doc": "append new clause after this one"
+        },
+        {
+            "id": "35-clause-content+text",
+            "selection": "clause-content",
+            "replacement": "text",
+            "action": "",
+            "_doc": "if legal for other rules"
+        },
+        {
+            "id": "36-clause-content+inline",
+            "selection": "clause-content",
+            "replacement": "inline",
+            "action": "",
+            "_doc": "if legal for other rules"
+        }
+    ]
+}

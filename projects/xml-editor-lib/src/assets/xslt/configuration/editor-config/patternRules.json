@@ -1,0 +1,870 @@
+{
+	"rules": {
+		"document": {
+			"children": [
+				"container",
+				"hcontainer",
+				"docContainer",
+				"docContainers",
+				"block"
+			],
+			"writable": false,
+			"outlineDisplay": false
+		},
+		"docContainer": {
+			"children": [
+				"document",
+				"documentReference",
+				"container",
+				"hcontainer",
+				"block"
+			],
+			"writable": false,
+			"outlineDisplay": false
+		},
+		"container": {
+			"children": ["container", "hcontainer", "block", "listItem"],
+			"writable": false,
+			"outlineDisplay": true
+		},
+		"hcontainer": {
+			"children": [
+				"num",
+				"heading",
+				"subheading",
+				"block",
+				"hcontainer",
+				"container",
+				"content",
+				"listItem"
+			],
+			"writable": false,
+			"outlineDisplay": true
+		},
+		"block": {
+			"children": ["inline", "empty", "subflow", "lineBreak", "figure", "table"],
+			"writable": true,
+			"outlineDisplay": true
+		},
+		"figure": {
+			"children": ["img", "figcaption", "inline"],
+			"writable": false,
+			"outlineDisplay": false
+		},
+		"img": {
+			"children": [],
+			"writable": false,
+			"outlineDisplay": false
+		},
+		"figcaption": {
+			"children": [],
+			"writable": false,
+			"outlineDisplay": false
+		},
+		"table": {
+			"children": ["caption", "thead", "tbody", "tfoot", "tr", "th", "td"],
+			"writable": true,
+			"outlineDisplay": false
+		},
+		"thead": {
+			"children": ["tr"],
+			"writable": true,
+			"outlineDisplay": false
+		},
+		"tbody": {
+			"children": ["tr"],
+			"writable": true,
+			"outlineDisplay": false
+		},
+		"tfoot": {
+			"children": ["tr"],
+			"writable": true,
+			"outlineDisplay": false
+		},
+		"tr": {
+			"children": ["td"],
+			"writable": true,
+			"outlineDisplay": false
+		},
+		"caption": {
+			"children": [],
+			"writable": true,
+			"outlineDisplay": false
+		},
+		"td": {
+			"children": ["block"],
+			"writable": true,
+			"outlineDisplay": false
+		},
+		"num": {
+			"children": ["inline", "empty", "subflow"],
+			"writable": true,
+			"outlineDisplay": false
+		},
+		"heading": {
+			"children": ["inline", "empty", "subflow"],
+			"writable": true,
+			"outlineDisplay": false
+		},
+		"subheading": {
+			"children": ["inline", "empty", "subflow"],
+			"writable": true,
+			"outlineDisplay": false
+		},
+		"empty": {
+			"children": [],
+			"writable": false,
+			"outlineDisplay": true
+		},
+		"subflow": {
+			"children": ["container", "hcontainer", "block"],
+			"writable": false,
+			"outlineDisplay": true
+		},
+		"content": {
+			"children": ["block", "hcontainer"],
+			"writable": false,
+			"outlineDisplay": false
+		},
+		"inline": {
+			"children": ["inline", "lineBreak", "subflow"],
+			"writable": true,
+			"outlineDisplay": false
+		},
+		"not-akn": {
+			"children": [],
+			"writable": false,
+			"outlineDisplay": true
+		}
+	},
+	"replacements": [
+		{
+			"id": "1-empty+empty",
+			"selection": "empty",
+			"replacement": "empty",
+			"action": "",
+			"_doc": ""
+		},
+		{
+			"id": "2-empty+plain-text",
+			"selection": "empty",
+			"replacement": "plain-text",
+			"action": "ACCEPT",
+			"_doc": ""
+		},
+		{
+			"id": "3-empty+plain-text-cr",
+			"selection": "empty",
+			"replacement": "plain-text-cr",
+			"action": "SPLIT",
+			"_doc": ""
+		},
+		{
+			"id": "4-empty+inline",
+			"selection": "empty",
+			"replacement": "inline",
+			"action": "ACCEPT",
+			"_doc": ""
+		},
+		{
+			"id": "5-empty+inline+content",
+			"selection": "empty",
+			"replacement": "inline+content",
+			"action": "ACCEPT",
+			"_doc": ""
+		},
+		{
+			"id": "6-empty+block",
+			"selection": "empty",
+			"replacement": "block",
+			"action": "REPLACE",
+			"_doc": ""
+		},
+		{
+			"id": "7-empty+block+content",
+			"selection": "empty",
+			"replacement": "block+content",
+			"action": "REJECT",
+			"_doc": ""
+		},
+		{
+			"id": "8-empty+container",
+			"selection": "empty",
+			"replacement": "container",
+			"action": "REPLACE",
+			"_doc": ""
+		},
+		{
+			"id": "9-empty+container+content",
+			"selection": "empty",
+			"replacement": "container+content",
+			"action": "REJECT",
+			"_doc": ""
+		},
+		{
+			"id": "10-empty+hcontainer",
+			"selection": "empty",
+			"replacement": "hcontainer",
+			"action": "REPLACE",
+			"_doc": ""
+		},
+		{
+			"id": "11-empty+hcontainer+content",
+			"selection": "empty",
+			"replacement": "hcontainer+content",
+			"action": "REJECT",
+			"_doc": ""
+		},
+		{
+			"id": "12-empty+popup",
+			"selection": "empty",
+			"replacement": "popup",
+			"action": "ACCEPT",
+			"_doc": ""
+		},
+		{
+			"id": "13-empty+popup+content",
+			"selection": "empty",
+			"replacement": "popup+content",
+			"action": "ACCEPT",
+			"_doc": ""
+		},
+		{
+			"id": "14-plain-text+empty",
+			"selection": "plain-text",
+			"replacement": "empty",
+			"action": "ACCEPT",
+			"_doc": ""
+		},
+		{
+			"id": "15-plain-text+plain-text",
+			"selection": "plain-text",
+			"replacement": "plain-text",
+			"action": "ACCEPT",
+			"_doc": ""
+		},
+		{
+			"id": "16-plain-text+plain-text-cr",
+			"selection": "plain-text",
+			"replacement": "plain-text-cr",
+			"action": "SPLIT",
+			"_doc": ""
+		},
+		{
+			"id": "17-plain-text+inline",
+			"selection": "plain-text",
+			"replacement": "inline",
+			"action": "TODO",
+			"_doc": ""
+		},
+		{
+			"id": "18-plain-text+inline+content",
+			"selection": "plain-text",
+			"replacement": "inline+content",
+			"action": "ACCEPT",
+			"_doc": ""
+		},
+		{
+			"id": "19-plain-text+block",
+			"selection": "plain-text",
+			"replacement": "block",
+			"action": "REPLACE",
+			"_doc": ""
+		},
+		{
+			"id": "20-plain-text+block+content",
+			"selection": "plain-text",
+			"replacement": "block+content",
+			"action": "REJECT",
+			"_doc": ""
+		},
+		{
+			"id": "21-plain-text+container",
+			"selection": "plain-text",
+			"replacement": "container",
+			"action": "REPLACE",
+			"_doc": ""
+		},
+		{
+			"id": "22-plain-text+container+content",
+			"selection": "plain-text",
+			"replacement": "container+content",
+			"action": "REJECT",
+			"_doc": ""
+		},
+		{
+			"id": "23-plain-text+hcontainer",
+			"selection": "plain-text",
+			"replacement": "hcontainer",
+			"action": "REPLACE",
+			"_doc": ""
+		},
+		{
+			"id": "24-plain-text+hcontainer+content",
+			"selection": "plain-text",
+			"replacement": "hcontainer+content",
+			"action": "REJECT",
+			"_doc": ""
+		},
+		{
+			"id": "25-plain-text+popup",
+			"selection": "plain-text",
+			"replacement": "popup",
+			"action": "ACCEPT",
+			"_doc": ""
+		},
+		{
+			"id": "26-plain-text+popup+content",
+			"selection": "plain-text",
+			"replacement": "popup+content",
+			"action": "ACCEPT",
+			"_doc": ""
+		},
+		{
+			"id": "27-inline+empty",
+			"selection": "inline",
+			"replacement": "empty",
+			"action": "ACCEPT",
+			"_doc": ""
+		},
+		{
+			"id": "28-inline+plain-text",
+			"selection": "inline",
+			"replacement": "plain-text",
+			"action": "ACCEPT",
+			"_doc": ""
+		},
+		{
+			"id": "29-inline+plain-text-cr",
+			"selection": "inline",
+			"replacement": "plain-text-cr",
+			"action": "SPLIT",
+			"_doc": ""
+		},
+		{
+			"id": "30-inline+inline",
+			"selection": "inline",
+			"replacement": "inline",
+			"action": "REPLACE",
+			"_doc": ""
+		},
+		{
+			"id": "31-inline+inline+content",
+			"selection": "inline",
+			"replacement": "inline+content",
+			"action": "ACCEPT",
+			"_doc": ""
+		},
+		{
+			"id": "32-inline+block",
+			"selection": "inline",
+			"replacement": "block",
+			"action": "REPLACE",
+			"_doc": ""
+		},
+		{
+			"id": "33-inline+block+content",
+			"selection": "inline",
+			"replacement": "block+content",
+			"action": "REJECT",
+			"_doc": ""
+		},
+		{
+			"id": "34-inline+container",
+			"selection": "inline",
+			"replacement": "container",
+			"action": "REPLACE",
+			"_doc": ""
+		},
+		{
+			"id": "35-inline+container+content",
+			"selection": "inline",
+			"replacement": "container+content",
+			"action": "REJECT",
+			"_doc": ""
+		},
+		{
+			"id": "36-inline+hcontainer",
+			"selection": "inline",
+			"replacement": "hcontainer",
+			"action": "REPLACE",
+			"_doc": ""
+		},
+		{
+			"id": "37-inline+hcontainer+content",
+			"selection": "inline",
+			"replacement": "hcontainer+content",
+			"action": "REJECT",
+			"_doc": ""
+		},
+		{
+			"id": "38-inline+popup",
+			"selection": "inline",
+			"replacement": "popup",
+			"action": "ACCEPT",
+			"_doc": ""
+		},
+		{
+			"id": "39-inline+popup+content",
+			"selection": "inline",
+			"replacement": "popup+content",
+			"action": "ACCEPT",
+			"_doc": ""
+		},
+		{
+			"id": "40-block+empty",
+			"selection": "block",
+			"replacement": "empty",
+			"action": "REMOVE",
+			"_doc": ""
+		},
+		{
+			"id": "41-block+plain-text",
+			"selection": "block",
+			"replacement": "plain-text",
+			"action": "REPLACE_CONTENT",
+			"_doc": ""
+		},
+		{
+			"id": "42-block+plain-text-cr",
+			"selection": "block",
+			"replacement": "plain-text-cr",
+			"action": "SPLIT",
+			"_doc": ""
+		},
+		{
+			"id": "43-block+inline",
+			"selection": "block",
+			"replacement": "inline",
+			"action": "TODO",
+			"_doc": ""
+		},
+		{
+			"id": "44-block+inline+content",
+			"selection": "block",
+			"replacement": "inline+content",
+			"action": "REJECT",
+			"_doc": ""
+		},
+		{
+			"id": "45-block+block",
+			"selection": "block",
+			"replacement": "block",
+			"action": "TODO",
+			"_doc": ""
+		},
+		{
+			"id": "46-block+block+content",
+			"selection": "block",
+			"replacement": "block+content",
+			"action": "ACCEPT",
+			"_doc": ""
+		},
+		{
+			"id": "47-block+container",
+			"selection": "block",
+			"replacement": "container",
+			"action": "TODO",
+			"_doc": ""
+		},
+		{
+			"id": "48-block+container+content",
+			"selection": "block",
+			"replacement": "container+content",
+			"action": "REJECT",
+			"_doc": ""
+		},
+		{
+			"id": "49-block+hcontainer",
+			"selection": "block",
+			"replacement": "hcontainer",
+			"action": "TODO",
+			"_doc": ""
+		},
+		{
+			"id": "50-block+hcontainer+content",
+			"selection": "block",
+			"replacement": "hcontainer+content",
+			"action": "TODO",
+			"_doc": ""
+		},
+		{
+			"id": "51-block+popup",
+			"selection": "block",
+			"replacement": "popup",
+			"action": "TODO",
+			"_doc": ""
+		},
+		{
+			"id": "52-block+popup+content",
+			"selection": "block",
+			"replacement": "popup+content",
+			"action": "TODO",
+			"_doc": ""
+		},
+		{
+			"id": "53-hcontainer+empty",
+			"selection": "hcontainer",
+			"replacement": "empty",
+			"action": "ACCEPT",
+			"_doc": ""
+		},
+		{
+			"id": "54-hcontainer+plain-text",
+			"selection": "hcontainer",
+			"replacement": "plain-text",
+			"action": "REJECT",
+			"_doc": ""
+		},
+		{
+			"id": "55-hcontainer+plain-text-cr",
+			"selection": "hcontainer",
+			"replacement": "plain-text-cr",
+			"action": "REJECT",
+			"_doc": ""
+		},
+		{
+			"id": "56-hcontainer+inline",
+			"selection": "hcontainer",
+			"replacement": "inline",
+			"action": "REJECT",
+			"_doc": ""
+		},
+		{
+			"id": "57-hcontainer+inline+content",
+			"selection": "hcontainer",
+			"replacement": "inline+content",
+			"action": "REJECT",
+			"_doc": ""
+		},
+		{
+			"id": "58-hcontainer+block",
+			"selection": "hcontainer",
+			"replacement": "block",
+			"action": "REJECT",
+			"_doc": ""
+		},
+		{
+			"id": "59-hcontainer+block+content",
+			"selection": "hcontainer",
+			"replacement": "block+content",
+			"action": "REJECT",
+			"_doc": ""
+		},
+		{
+			"id": "60-hcontainer+container",
+			"selection": "hcontainer",
+			"replacement": "container",
+			"action": "ACCEPT",
+			"_doc": ""
+		},
+		{
+			"id": "61-hcontainer+container+content",
+			"selection": "hcontainer",
+			"replacement": "container+content",
+			"action": "ACCEPT",
+			"_doc": ""
+		},
+		{
+			"id": "62-hcontainer+hcontainer",
+			"selection": "hcontainer",
+			"replacement": "hcontainer",
+			"action": "TODO",
+			"_doc": ""
+		},
+		{
+			"id": "63-hcontainer+hcontainer+content",
+			"selection": "hcontainer",
+			"replacement": "hcontainer+content",
+			"action": "ACCEPT",
+			"_doc": ""
+		},
+		{
+			"id": "64-hcontainer+popup",
+			"selection": "hcontainer",
+			"replacement": "popup",
+			"action": "REJECT",
+			"_doc": ""
+		},
+		{
+			"id": "65-hcontainer+popup+content",
+			"selection": "hcontainer",
+			"replacement": "popup+content",
+			"action": "REJECT",
+			"_doc": ""
+		},
+		{
+			"id": "66-container+empty",
+			"selection": "container",
+			"replacement": "empty",
+			"action": "ACCEPT",
+			"_doc": ""
+		},
+		{
+			"id": "67-container+plain-text",
+			"selection": "container",
+			"replacement": "plain-text",
+			"action": "ACCEPT",
+			"_doc": ""
+		},
+		{
+			"id": "68-container+plain-text-cr",
+			"selection": "container",
+			"replacement": "plain-text-cr",
+			"action": "",
+			"_doc": ""
+		},
+		{
+			"id": "69-container+inline",
+			"selection": "container",
+			"replacement": "inline",
+			"action": "REJECT",
+			"_doc": ""
+		},
+		{
+			"id": "70-container+inline+content",
+			"selection": "container",
+			"replacement": "inline+content",
+			"action": "REJECT",
+			"_doc": ""
+		},
+		{
+			"id": "71-container+block",
+			"selection": "container",
+			"replacement": "block",
+			"action": "REJECT",
+			"_doc": ""
+		},
+		{
+			"id": "72-container+block+content",
+			"selection": "container",
+			"replacement": "block+content",
+			"action": "REJECT",
+			"_doc": ""
+		},
+		{
+			"id": "73-container+container",
+			"selection": "container",
+			"replacement": "container",
+			"action": "TODO",
+			"_doc": "Replace container of selection maintaining the content"
+		},
+		{
+			"id": "74-container+container+content",
+			"selection": "container",
+			"replacement": "container+content",
+			"action": "ACCEPT",
+			"_doc": ""
+		},
+		{
+			"id": "75-container+hcontainer",
+			"selection": "container",
+			"replacement": "hcontainer",
+			"action": "ACCEPT",
+			"_doc": ""
+		},
+		{
+			"id": "76-container+hcontainer+content",
+			"selection": "container",
+			"replacement": "hcontainer+content",
+			"action": "ACCEPT",
+			"_doc": ""
+		},
+		{
+			"id": "77-container+popup",
+			"selection": "container",
+			"replacement": "popup",
+			"action": "REJECT",
+			"_doc": ""
+		},
+		{
+			"id": "78-container+popup+content",
+			"selection": "container",
+			"replacement": "popup+content",
+			"action": "REJECT",
+			"_doc": ""
+		},
+		{
+			"id": "79-popup+empty",
+			"selection": "popup",
+			"replacement": "empty",
+			"action": "ACCEPT",
+			"_doc": ""
+		},
+		{
+			"id": "80-popup+plain-text",
+			"selection": "popup",
+			"replacement": "plain-text",
+			"action": "ACCEPT",
+			"_doc": ""
+		},
+		{
+			"id": "81-popup+plain-text-cr",
+			"selection": "popup",
+			"replacement": "plain-text-cr",
+			"action": "ACCEPT",
+			"_doc": ""
+		},
+		{
+			"id": "82-popup+inline",
+			"selection": "popup",
+			"replacement": "inline",
+			"action": "ACCEPT",
+			"_doc": ""
+		},
+		{
+			"id": "83-popup+inline+content",
+			"selection": "popup",
+			"replacement": "inline+content",
+			"action": "ACCEPT",
+			"_doc": ""
+		},
+		{
+			"id": "84-popup+block",
+			"selection": "popup",
+			"replacement": "block",
+			"action": "TODO",
+			"_doc": "Replace containing block element"
+		},
+		{
+			"id": "85-popup+block+content",
+			"selection": "popup",
+			"replacement": "block+content",
+			"action": "REJECT",
+			"_doc": ""
+		},
+		{
+			"id": "86-popup+container",
+			"selection": "popup",
+			"replacement": "container",
+			"action": "TODO",
+			"_doc": "Replace containing container or reject"
+		},
+		{
+			"id": "87-popup+container+content",
+			"selection": "popup",
+			"replacement": "container+content",
+			"action": "REJECT",
+			"_doc": ""
+		},
+		{
+			"id": "88-popup+hcontainer",
+			"selection": "popup",
+			"replacement": "hcontainer",
+			"action": "TODO",
+			"_doc": "Replace containing hcontainer or reject"
+		},
+		{
+			"id": "89-popup+hcontainer+content",
+			"selection": "popup",
+			"replacement": "hcontainer+content",
+			"action": "REJECT",
+			"_doc": ""
+		},
+		{
+			"id": "90-popup+popup",
+			"selection": "popup",
+			"replacement": "popup",
+			"action": "ACCEPT",
+			"_doc": ""
+		},
+		{
+			"id": "91-popup+popup+content",
+			"selection": "popup",
+			"replacement": "popup+content",
+			"action": "ACCEPT",
+			"_doc": ""
+		},
+		{
+			"id": "92-popupContent+empty",
+			"selection": "popupContent",
+			"replacement": "empty",
+			"action": "ACCEPT",
+			"_doc": ""
+		},
+		{
+			"id": "93-popupContent+plain-text",
+			"selection": "popupContent",
+			"replacement": "plain-text",
+			"action": "REJECT",
+			"_doc": ""
+		},
+		{
+			"id": "94-popupContent+plain-text-cr",
+			"selection": "popupContent",
+			"replacement": "plain-text-cr",
+			"action": "REJECT",
+			"_doc": ""
+		},
+		{
+			"id": "95-popupContent+inline",
+			"selection": "popupContent",
+			"replacement": "inline",
+			"action": "REJECT",
+			"_doc": ""
+		},
+		{
+			"id": "96-popupContent+inline+content",
+			"selection": "popupContent",
+			"replacement": "inline+content",
+			"action": "REJECT",
+			"_doc": ""
+		},
+		{
+			"id": "97-popupContent+block",
+			"selection": "popupContent",
+			"replacement": "block",
+			"action": "ACCEPT",
+			"_doc": ""
+		},
+		{
+			"id": "98-popupContent+block+content",
+			"selection": "popupContent",
+			"replacement": "block+content",
+			"action": "ACCEPT",
+			"_doc": ""
+		},
+		{
+			"id": "99-popupContent+container",
+			"selection": "popupContent",
+			"replacement": "container",
+			"action": "ACCEPT",
+			"_doc": ""
+		},
+		{
+			"id": "100-popupContent+container+content",
+			"selection": "popupContent",
+			"replacement": "container+content",
+			"action": "ACCEPT",
+			"_doc": ""
+		},
+		{
+			"id": "101-popupContent+hcontainer",
+			"selection": "popupContent",
+			"replacement": "hcontainer",
+			"action": "ACCEPT",
+			"_doc": ""
+		},
+		{
+			"id": "102-popupContent+hcontainer+content",
+			"selection": "popupContent",
+			"replacement": "hcontainer+content",
+			"action": "ACCEPT",
+			"_doc": ""
+		},
+		{
+			"id": "103-popupContent+popup",
+			"selection": "popupContent",
+			"replacement": "popup",
+			"action": "TODO",
+			"_doc": "replace popup of selection maintaining the content"
+		},
+		{
+			"id": "104-popupContent+popup+content",
+			"selection": "popupContent",
+			"replacement": "popup+content",
+			"action": "ACCEPT",
+			"_doc": ""
+		}
+	]
+}

@@ -1,0 +1,583 @@
+﻿<akomaNtoso>
+  <act contains="originalVersion" name="publicLaw">
+    <meta>
+      <identification source="#רשומות">
+        <FRBRWork>
+          <FRBRthis value="/akn/il/act/type/1000/number/!main" />
+          <FRBRuri value="/akn/il/act/type/1000/number" />
+          <FRBRalias name="hebrew URI" value="/akn/il/act/‏סוג_המסמך‎/‏תאריך_לא_ידוע‎/number" />
+          <FRBRdate date="1000-01-01" name="תאריך יצירה" calType="hebrewCalendar" verbatim="תאריך_לא_ידוע" />
+          <FRBRauthor href="#proposer" as="#מחבר" />
+          <FRBRcountry value="il" />
+          <FRBRsubtype value="type" showAs="סוג_המסמך" />
+          <FRBRnumber value="number" />
+        </FRBRWork>
+        <FRBRExpression>
+          <FRBRthis value="/akn/il/act/type/1000/number/heb@/!main" />
+          <FRBRuri value="/akn/il/act/type/1000/number/heb@" />
+          <FRBRalias name="hebrew URI" value="/akn/il/act/‏סוג_המסמך‎/‏תאריך_לא_ידוע‎/number/heb@" />
+          <FRBRdate date="1000-01-01" name="תאריך יצירה" calType="hebrewCalendar" verbatim="תאריך_לא_ידוע" />
+          <FRBRauthor href="#proposer" as="#מחבר" />
+          <FRBRlanguage language="heb" />
+        </FRBRExpression>
+        <FRBRManifestation>
+          <FRBRthis value="/akn/il/act/type/1000/number/heb@/!main.akn" />
+          <FRBRuri value="/akn/il/act/type/1000/number/heb@.akn" />
+          <FRBRalias name="hebrew URI" value="/akn/il/act/‏סוג_המסמך‎/‏תאריך_לא_ידוע‎/number/heb@.akn" />
+          <FRBRdate date="1000-01-01" name="תאריך יצירה" calType="hebrewCalendar" verbatim="תאריך_לא_ידוע" />
+          <FRBRauthor href="#proposer" as="#מחבר" />
+          <FRBRformat value="xml" />
+        </FRBRManifestation>
+      </identification>
+      <references source="#רשומות">
+        <TLCRole eId="מחבר" href="/akn/ontology/role/il/מחבר" showAs="מחבר המסמך" />
+        <TLCOrganization eId="רשומות" href="/akn/ontology/organization/il/רשומות" showAs="רשומות" />
+        <TLCOrganization eId="knesset" href="/akn/ontology/organization/il/הכנסת" showAs="הכנסת" />
+        <TLCOrganization eId="gov" href="/akn/ontology/organization/il/הממשלה" showAs="הממשלה" />
+        <TLCOrganization eId="committee" href="/akn/ontology/organization/il/וועדה" showAs="וועדה" />
+      </references>
+      <notes source="#רשומות">
+        <note eId="note_1" placement="bottom">
+          <p>התקבל בכנסת ביום ט"ז בכסלו התשפ"ה (17 בדצמבר 2024); הצעת החוק ודברי הסבר פורסמו בהצעות חוק הכנסת – 1065, מיום כ"ו בתשרי התשפ"ה (28 באוקטובר 2024), עמ' 12.</p>
+        </note>
+        <note eId="note_2" placement="bottom">
+          <p>ס"ח התש"י, עמ' 162; התשפ"ד, עמ' 739.</p>
+        </note>
+        <note eId="note_3" placement="bottom">
+          <p>ס"ח התשכ"ג, עמ' 72; התשע"ב, עמ' 178.</p>
+        </note>
+        <note eId="note_4" placement="bottom">
+          <p>ס"ח התש"ל, עמ' 126; התשפ"ד, עמ' 742.</p>
+        </note>
+      </notes>
+    </meta>
+    <preface>
+      <container name="title">
+        <p>
+          <docTitle eId="docTitle" class="identLevel_0">חוק משפחות חיילים שנספו במערכה (תגמולים ושיקום) (תיקון מס' 45), התשפ"ה–2024<noteRef href="#note_1" marker="*" /></docTitle>
+          <docNumber eId="docNumber"></docNumber>
+        </p>
+      </container>
+    </preface>
+    <body period="#tmpg_1">
+      <article eId="art_1">
+        <heading class="identLevel_1" eId="art_1__head">תיקון סעיף 13ב</heading>
+        <num class="identLevel_1">1.</num>
+        <content>
+          <p class="identLevel_2">בחוק משפחות חיילים שנספו במערכה (תגמולים ושיקום), התש"י–1950‏<noteRef href="#note_2" marker="1" /> (להלן – החוק העיקרי), בסעיף 13ב(1), במקום הסכום הנקוב בו יבוא "8,500 שקלים חדשים".</p>
+        </content>
+      </article>
+      <article eId="art_2">
+        <heading class="identLevel_1" eId="art_2__head">תיקון סעיף 15ז</heading>
+        <num class="identLevel_1">2.</num>
+        <content>
+          <p class="identLevel_2">בסעיף 15ז(ג) לחוק העיקרי, אחרי "21 שנה" יבוא "ולאדם שיתום של הנספה סמוך על שולחנו והוא אינו אלמן או אלמנה של הנספה – עד הגיע הצעיר שבין היתומים כאמור לגיל 30".</p>
+        </content>
+      </article>
+      <article eId="art_3">
+        <heading class="identLevel_1" eId="art_3__head">הוספת סעיף 15י</heading>
+        <num class="identLevel_1">3.</num>
+        <content>
+          <p class="identLevel_2">אחרי סעיף 15ט לחוק העיקרי יבוא:</p>
+          <p>
+            <mod eId="art_3__mod_1">
+              <quotedStructure eId="art_3__mod_1__qstr_1" style="display:inline-block;">
+                <article eId="art_3__mod_1__qstr_1__art_15י">
+                  <heading class="identLevel_0" eId="art_3__mod_1__qstr_1__art_15י__head">"סיוע ליתום שסמוך על שולחנו של אדם</heading>
+                  <num class="identLevel_1">15י.</num>
+                  <list eId="art_3__mod_1__qstr_1__art_15י__list_1">
+                    <point eId="art_3__mod_1__qstr_1__art_15י__list_1__point_א">
+                      <num class="identLevel_2">(א)</num>
+                      <content>
+                        <p class="identLevel_3">אדם שיתום של נספה עד גיל 21 סמוך על שולחנו והוא אינו אלמן או אלמנה של הנספה יהיה זכאי למענק חד־פעמי לרכישת רכב בסכום של 52,866 שקלים חדשים.</p>
+                      </content>
+                    </point>
+                    <point eId="art_3__mod_1__qstr_1__art_15י__list_1__point_ב">
+                      <num class="identLevel_2">(ב)</num>
+                      <list eId="art_3__mod_1__qstr_1__art_15י__list_1__point_ב__list_1">
+                        <intro eId="art_3__mod_1__qstr_1__art_15י__list_1__point_ב__list_1__intro">
+                          <p class="identLevel_3">אדם כאמור בסעיף קטן (א) יהיה זכאי לסיוע במימון הוצאות מדור, כמפורט להלן, בעבור הדירה שמשמשת למגורי היתום שסמוך על שולחנו בסכום של עד 2,500 שקלים חדשים לחודש, בשלוש השנים שלאחר מות הנספה או עד הגיע צעיר היתומים שסמוך על שולחנו לגיל 21, לפי המוקדם:</p>
+                        </intro>
+                        <point eId="art_3__mod_1__qstr_1__art_15י__list_1__point_ב__list_1__point_1">
+                          <num class="identLevel_3">(1)</num>
+                          <content>
+                            <p class="identLevel_4">שכר דירה;</p>
+                          </content>
+                        </point>
+                        <point eId="art_3__mod_1__qstr_1__art_15י__list_1__point_ב__list_1__point_2">
+                          <num class="identLevel_3">(2)</num>
+                          <content>
+                            <p class="identLevel_4">החזר של הלוואת משכנתה.</p>
+                          </content>
+                        </point>
+                      </list>
+                    </point>
+                    <point eId="art_3__mod_1__qstr_1__art_15י__list_1__point_ג">
+                      <num class="identLevel_2">(ג)</num>
+                      <content>
+                        <p class="identLevel_3">סיוע לפי סעיף זה ישולם רק בעד יתום אחד של הנספה, גם אם יש יתומים נוספים של אותו נספה שסמוכים על שולחנו של אותו אדם."</p>
+                      </content>
+                    </point>
+                  </list>
+                </article>
+              </quotedStructure>
+            </mod>
+          </p>
+        </content>
+      </article>
+      <article eId="art_4">
+        <heading class="identLevel_1" eId="art_4__head">תיקון חוק יום הזיכרון לחללי מערכות ישראל – מס' 6</heading>
+        <num class="identLevel_1">4.</num>
+        <content>
+          <p class="identLevel_2">בחוק יום הזיכרון לחללי מערכות ישראל, התשכ"ג–1963<noteRef href="#note_3" marker="2" />, בסעיף 4א(ב), בסופו יבוא "ולרבות אדם שיתום של חלל מערכות ישראל סמוך על שולחנו והוא אינו אלמן או אלמנה של אותו חלל".</p>
+        </content>
+      </article>
+      <article eId="art_5">
+        <heading class="identLevel_1" eId="art_5__head">תיקון חוק התגמולים לנפגעי פעולות איבה – מס' 45</heading>
+        <num class="identLevel_1">5.</num>
+        <content>
+          <p class="identLevel_2">בחוק התגמולים לנפגעי פעולות איבה, התש"ל–1970<noteRef href="#note_4" marker="3" />, בסעיף 7ה(ב), בסופו יבוא "ולרבות אדם שיתום של נפגע שנפטר כתוצאה מפגיעת איבה סמוך על שולחנו והוא אינו אלמן או אלמנה של אותו נפגע".</p>
+        </content>
+      </article>
+      <article eId="art_6">
+        <heading class="identLevel_1" eId="art_6__head">תחילה</heading>
+        <num class="identLevel_1">6.</num>
+        <content>
+          <p class="identLevel_2">תחילתו של חוק זה ביום ט"ו בטבת התשפ"ה (15 בינואר 2025) (להלן – יום התחילה).</p>
+        </content>
+      </article>
+      <article eId="art_7">
+        <heading class="identLevel_1" eId="art_7__head">תחולה והוראות מעבר</heading>
+        <num class="identLevel_1">7.</num>
+        <list eId="art_7__list_1">
+          <point eId="art_7__list_1__point_א">
+            <num class="identLevel_2">(א)</num>
+            <content>
+              <p class="identLevel_3">הוראות חוק זה יחולו על מי שזכאי לזכויות מכוחו, אף אם יום פטירת האדם שבשלו קמה הזכאות חל לפני יום תחילתו של חוק זה, אולם תשלומים לפי הוראות חוק זה ישולמו מיום התחילה ואילך.</p>
+            </content>
+          </point>
+          <point eId="art_7__list_1__point_ב">
+            <num class="identLevel_2">(ב)</num>
+            <list eId="art_7__list_1__point_ב__list_1">
+              <intro eId="art_7__list_1__point_ב__list_1__intro">
+                <p class="identLevel_3">על אף האמור בסעיף קטן (א) –</p>
+              </intro>
+              <point eId="art_7__list_1__point_ב__list_1__point_1">
+                <num class="identLevel_3">(1)</num>
+                <content>
+                  <p class="identLevel_4">מי שזכאי לתגמול לפי הוראות סעיף 13ב לחוק העיקרי כנוסחו ערב יום התחילה (להלן – הדין הקודם), יהיה זכאי מיום התחילה להפרש שבין סכום התגמול לפי הוראות הסעיף האמור כנוסחו בחוק זה ובין סכום התגמול שהיה זכאי לו לפי הדין הקודם בעד התקופה שמיום כ"ב בתשרי התשפ"ד (7 באוקטובר 2023) או מיום פטירת הנספה, לפי המאוחר;</p>
+                </content>
+              </point>
+              <point eId="art_7__list_1__point_ב__list_1__point_2">
+                <num class="identLevel_3">(2)</num>
+                <content>
+                  <p class="identLevel_4">תשלום לפי הוראות סעיף 15י(א) לחוק העיקרי, כנוסחו בחוק זה (להלן – הדין החדש), ישולם מיום התחילה גם לאדם שיתום של נספה היה סמוך על שולחנו לפני יום התחילה והוא אינו אלמן או אלמנה של הנספה, ובלבד שצעיר היתומים שסמוך על שולחנו לא הגיע לגיל 21;</p>
+                </content>
+              </point>
+              <point eId="art_7__list_1__point_ב__list_1__point_3">
+                <num class="identLevel_3">(3)</num>
+                <content>
+                  <p class="identLevel_4">לעניין מי שהתקופה לזכאות לגביו, לפי הוראות סעיף 15י(ב) לדין החדש, חלפה או טרם הסתיימה בשלוש השנים שמיום תחילתו של חוק זה – ישולמו תשלומים לפי הסעיף האמור עד תום שלוש השנים כאמור או עד הגיע צעיר היתומים שסמוך על שולחנו של אדם כאמור באותו סעיף לגיל 21, לפי המוקדם.</p>
+                </content>
+              </point>
+            </list>
+          </point>
+        </list>
+      </article>
+      <section eId="art_38__mod_1__qstr_1__annex_3__sec_2">
+        <content>
+          <table class="landscape" border="1" style="border-collapse: collapse;" eId="table_1" >
+            <tr>
+              <td style="width:139px;">
+                <p>ההפרה</p>
+              </td>
+              <th colspan="4" style="width:215px;">
+                <p>סכום העיצום הכספי (בשקלים חדשים)</p>
+              </th>
+            </tr>
+            <tr>
+              <th style="width:139px;">
+                <p>טור א'</p>
+              </th>
+              <th style="width:49px;">
+                <p>טור ב'</p>
+              </th>
+              <th style="width:55px;">
+                <p>טור ג'</p>
+              </th>
+              <th style="width:54px;">
+                <p>טור ד'</p>
+              </th>
+              <th style="width:55px;">
+                <p>טור ה'</p>
+              </th>
+            </tr>
+            <tr>
+              <th style="width:139px;">
+                <p>-</p>
+              </th>
+              <th style="width:49px;">
+                <p>מאגר המנוהל בידי יחיד</p>
+              </th>
+              <th style="width:55px;">
+                <p>מאגר שחלה עליו רמת האבטחה הבסיסית</p>
+              </th>
+              <th style="width:54px;">
+                <p>מאגר שחלה עליו רמת האבטחה הבינונית</p>
+              </th>
+              <th style="width:55px;">
+                <p>מאגר שחלה עליו רמת האבטחה הגבוהה</p>
+              </th>
+            </tr>
+            <tr>
+              <td style="width:139px;">
+                <p>(1)הכנת מסמך הגדרות המאגר: בעל שליטה במאגר מידע שלא הגדיר במסמך הגדרות המאגר את כל העניינים האמורים בתקנה 2(א) לתקנות אבטחת מידע, בניגוד להוראות אותה תקנה, לרבות סוגי המידע השונים הכלולים במאגר המידע לפי תקנת משנה (3), בשים לב לרשימת סוגי המידע המהווים מידע בעל רגישות מיוחדת לפי סעיף 3 לחוק;</p>
+              </td>
+              <td style="width:49px;">
+                <p>2,000</p>
+              </td>
+              <td style="width:55px;">
+                <p>2,000</p>
+              </td>
+              <td style="width:54px;">
+                <p>40,000</p>
+              </td>
+              <td style="width:55px;">
+                <p>160,000</p>
+              </td>
+            </tr>
+            <tr>
+              <td style="width:139px;">
+                <p>(2)עדכון מסמך הגדרות מאגר: בעל שליטה במאגר מידע שלא עדכן את מסמך הגדרות המאגר, בניגוד להוראות תקנה 2(ב) לתקנות אבטחת מידע;</p>
+              </td>
+              <td style="width:49px;">
+                <p>2,000</p>
+              </td>
+              <td style="width:55px;">
+                <p>2,000</p>
+              </td>
+              <td style="width:54px;">
+                <p>40,000</p>
+              </td>
+              <td style="width:55px;">
+                <p>160,000</p>
+              </td>
+            </tr>
+            <tr>
+              <td style="width:139px;">
+                <p>(3)בדיקת מידע עודף: בעל שליטה במאגר מידע שלא בחן או תיעד את הבחינה אם אין המידע שהוא שומר במאגר רב מן הנדרש למטרות המאגר, בניגוד להוראות תקנה 2(ג) או 19(ב) לתקנות אבטחת מידע;</p>
+              </td>
+              <td style="width:49px;">
+                <p>2,000</p>
+              </td>
+              <td style="width:55px;">
+                <p>2,000</p>
+              </td>
+              <td style="width:54px;">
+                <p>40,000</p>
+              </td>
+              <td style="width:55px;">
+                <p>160,000</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>(4) הכנת נוהל אבטחת מידע: בעל שליטה במאגר מידע או מחזיק במאגר מידע
+                  שלא קבע במסמך נוהל אבטחת מידע בהתאם למסמך הגדרות המאגר ותקנות אבטחת מידע (להלן – נוהל
+                  אבטחה), בניגוד להוראות תקנה 4(א) לתקנות אבטחת מידע או להוראות התקנה האמורה כפי שהוחלה
+                  בתקנה 19(א) לתקנות האמורות, לפי העניין;</p>
+              </td>
+              <td>
+                <p>–</p>
+              </td>
+              <td>
+                <p>2,000</p>
+              </td>
+              <td>
+                <p>40,000</p>
+              </td>
+              <td>
+                <p>160,000</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>(5) נוהל אבטחה – הכנה, שמירה וקביעת הוראות: בעל שליטה במאגר מידע או
+                  מחזיק במאגר מידע, שלא עשה אחד מאלה:</p>
+              </td>
+              <td>
+                <p>–</p>
+              </td>
+              <td>
+                <p>2,000</p>
+              </td>
+              <td>
+                <p>40,000</p>
+              </td>
+              <td>
+                <p>160,000</p>
+              </td>
+            </tr>
+            <tr>
+              <td style="width:139px;">
+                <p>(3)בדיקת מידע עודף: בעל שליטה במאגר מידע שלא בחן או תיעד את הבחינה אם אין המידע שהוא שומר במאגר רב מן הנדרש למטרות המאגר, בניגוד להוראות תקנה 2(ג) או 19(ב) לתקנות אבטחת מידע;</p>
+              </td>
+              <td style="width:49px;">
+                <p>2,000</p>
+              </td>
+              <td style="width:55px;">
+                <p>2,000</p>
+              </td>
+              <td style="width:54px;">
+                <p>40,000</p>
+              </td>
+              <td style="width:55px;">
+                <p>160,000</p>
+              </td>
+            </tr>
+            <tr>
+              <td style="width:139px;">
+                <p>(3)בדיקת מידע עודף: בעל שליטה במאגר מידע שלא בחן או תיעד את הבחינה אם אין המידע שהוא שומר במאגר רב מן הנדרש למטרות המאגר, בניגוד להוראות תקנה 2(ג) או 19(ב) לתקנות אבטחת מידע;</p>
+              </td>
+              <td style="width:49px;">
+                <p>2,000</p>
+              </td>
+              <td style="width:55px;">
+                <p>2,000</p>
+              </td>
+              <td style="width:54px;">
+                <p>40,000</p>
+              </td>
+              <td style="width:55px;">
+                <p>160,000</p>
+              </td>
+            </tr>
+            <tr>
+              <td style="width:139px;">
+                <p>(3)בדיקת מידע עודף: בעל שליטה במאגר מידע שלא בחן או תיעד את הבחינה אם אין המידע שהוא שומר במאגר רב מן הנדרש למטרות המאגר, בניגוד להוראות תקנה 2(ג) או 19(ב) לתקנות אבטחת מידע;</p>
+              </td>
+              <td style="width:49px;">
+                <p>2,000</p>
+              </td>
+              <td style="width:55px;">
+                <p>2,000</p>
+              </td>
+              <td style="width:54px;">
+                <p>40,000</p>
+              </td>
+              <td style="width:55px;">
+                <p>160,000</p>
+              </td>
+            </tr>
+            <tr>
+              <td style="width:139px;">
+                <p>(3)בדיקת מידע עודף: בעל שליטה במאגר מידע שלא בחן או תיעד את הבחינה אם אין המידע שהוא שומר במאגר רב מן הנדרש למטרות המאגר, בניגוד להוראות תקנה 2(ג) או 19(ב) לתקנות אבטחת מידע;</p>
+              </td>
+              <td style="width:49px;">
+                <p>2,000</p>
+              </td>
+              <td style="width:55px;">
+                <p>2,000</p>
+              </td>
+              <td style="width:54px;">
+                <p>40,000</p>
+              </td>
+              <td style="width:55px;">
+                <p>160,000</p>
+              </td>
+            </tr>
+            <tr>
+              <td style="width:139px;">
+                <p>(3)בדיקת מידע עודף: בעל שליטה במאגר מידע שלא בחן או תיעד את הבחינה אם אין המידע שהוא שומר במאגר רב מן הנדרש למטרות המאגר, בניגוד להוראות תקנה 2(ג) או 19(ב) לתקנות אבטחת מידע;</p>
+              </td>
+              <td style="width:49px;">
+                <p>2,000</p>
+              </td>
+              <td style="width:55px;">
+                <p>2,000</p>
+              </td>
+              <td style="width:54px;">
+                <p>40,000</p>
+              </td>
+              <td style="width:55px;">
+                <p>160,000</p>
+              </td>
+            </tr>
+            <tr>
+              <td style="width:139px;">
+                <p>(3)בדיקת מידע עודף: בעל שליטה במאגר מידע שלא בחן או תיעד את הבחינה אם אין המידע שהוא שומר במאגר רב מן הנדרש למטרות המאגר, בניגוד להוראות תקנה 2(ג) או 19(ב) לתקנות אבטחת מידע;</p>
+              </td>
+              <td style="width:49px;">
+                <p>2,000</p>
+              </td>
+              <td style="width:55px;">
+                <p>2,000</p>
+              </td>
+              <td style="width:54px;">
+                <p>40,000</p>
+              </td>
+              <td style="width:55px;">
+                <p>160,000</p>
+              </td>
+            </tr>
+            <tr>
+              <td style="width:139px;">
+                <p>(3)בדיקת מידע עודף: בעל שליטה במאגר מידע שלא בחן או תיעד את הבחינה אם אין המידע שהוא שומר במאגר רב מן הנדרש למטרות המאגר, בניגוד להוראות תקנה 2(ג) או 19(ב) לתקנות אבטחת מידע;</p>
+              </td>
+              <td style="width:49px;">
+                <p>2,000</p>
+              </td>
+              <td style="width:55px;">
+                <p>2,000</p>
+              </td>
+              <td style="width:54px;">
+                <p>40,000</p>
+              </td>
+              <td style="width:55px;">
+                <p>160,000</p>
+              </td>
+            </tr>
+            <tr>
+              <td style="width:139px;">
+                <p>(3)בדיקת מידע עודף: בעל שליטה במאגר מידע שלא בחן או תיעד את הבחינה אם אין המידע שהוא שומר במאגר רב מן הנדרש למטרות המאגר, בניגוד להוראות תקנה 2(ג) או 19(ב) לתקנות אבטחת מידע;</p>
+              </td>
+              <td style="width:49px;">
+                <p>2,000</p>
+              </td>
+              <td style="width:55px;">
+                <p>2,000</p>
+              </td>
+              <td style="width:54px;">
+                <p>40,000</p>
+              </td>
+              <td style="width:55px;">
+                <p>160,000</p>
+              </td>
+            </tr>
+            <tr>
+              <td style="width:139px;">
+                <p>(3)בדיקת מידע עודף: בעל שליטה במאגר מידע שלא בחן או תיעד את הבחינה אם אין המידע שהוא שומר במאגר רב מן הנדרש למטרות המאגר, בניגוד להוראות תקנה 2(ג) או 19(ב) לתקנות אבטחת מידע;</p>
+              </td>
+              <td style="width:49px;">
+                <p>2,000</p>
+              </td>
+              <td style="width:55px;">
+                <p>2,000</p>
+              </td>
+              <td style="width:54px;">
+                <p>40,000</p>
+              </td>
+              <td style="width:55px;">
+                <p>160,000</p>
+              </td>
+            </tr>
+            <tr>
+              <td style="width:139px;">
+                <p>(3)בדיקת מידע עודף: בעל שליטה במאגר מידע שלא בחן או תיעד את הבחינה אם אין המידע שהוא שומר במאגר רב מן הנדרש למטרות המאגר, בניגוד להוראות תקנה 2(ג) או 19(ב) לתקנות אבטחת מידע;</p>
+              </td>
+              <td style="width:49px;">
+                <p>2,000</p>
+              </td>
+              <td style="width:55px;">
+                <p>2,000</p>
+              </td>
+              <td style="width:54px;">
+                <p>40,000</p>
+              </td>
+              <td style="width:55px;">
+                <p>160,000</p>
+              </td>
+            </tr>
+            <tr>
+              <td style="width:139px;">
+                <p>(3)בדיקת מידע עודף: בעל שליטה במאגר מידע שלא בחן או תיעד את הבחינה אם אין המידע שהוא שומר במאגר רב מן הנדרש למטרות המאגר, בניגוד להוראות תקנה 2(ג) או 19(ב) לתקנות אבטחת מידע;</p>
+              </td>
+              <td style="width:49px;">
+                <p>2,000</p>
+              </td>
+              <td style="width:55px;">
+                <p>2,000</p>
+              </td>
+              <td style="width:54px;">
+                <p>40,000</p>
+              </td>
+              <td style="width:55px;">
+                <p>160,000</p>
+              </td>
+            </tr>
+            <tr>
+              <td style="width:139px;">
+                <p>(3)בדיקת מידע עודף: בעל שליטה במאגר מידע שלא בחן או תיעד את הבחינה אם אין המידע שהוא שומר במאגר רב מן הנדרש למטרות המאגר, בניגוד להוראות תקנה 2(ג) או 19(ב) לתקנות אבטחת מידע;</p>
+              </td>
+              <td style="width:49px;">
+                <p>2,000</p>
+              </td>
+              <td style="width:55px;">
+                <p>2,000</p>
+              </td>
+              <td style="width:54px;">
+                <p>40,000</p>
+              </td>
+              <td style="width:55px;">
+                <p>160,000</p>
+              </td>
+            </tr>
+          </table>
+          
+          <table class="landscape">
+            <tr>
+              <th style="width:49px;" >
+                <p>ההפרה</p>
+              </th>
+              <th>
+                <p>סכום
+                  העיצום הכספי</p>
+              </th>
+            </tr>
+            <tr>
+              <th style="width:49px;">
+                <p>טור
+                  א'</p>
+              </th>
+              <th style="width:49px;">
+                <p>טור
+                  ב'</p>
+              </th>
+            </tr>
+            <tr>
+              <td>
+                <p>(1) בעל שליטה במאגר מידע שלא
+                  הודיע בכתב לנושא המידע על החלטתו בבקשה לפי הוראות תקנה 3(א) לתקנות העברת
+                  מידע מהאזור הכלכלי האירופי, בניגוד להוראות תקנה 3(ד) לתקנות האמורות;</p>
+              </td>
+              <td>
+                <p>15,000
+                  שקלים חדשים</p>
+              </td>
+            </tr>
+          </table>
+        </content>
+      </section>
+    </body>
+    <conclusions eId="eId">
+      <p class="signatures identLevel_0">
+        <signature>
+          <person refersTo="בנימין_נתניהו">בנימין נתניהו</person>
+          <role refersTo="ראש_הממשלה">ראש הממשלה</role>
+        </signature>
+        <signature>
+          <person refersTo="ישראל_כץ">ישראל כץ</person>
+          <role refersTo="שר_הביטחון__">שר הביטחון  </role>
+        </signature>
+        <signature>
+          <person refersTo="יצחק_הרצוג">יצחק הרצוג</person>
+          <role refersTo="נשיא_המדינה">נשיא המדינה</role>
+        </signature>
+        <signature>
+          <person refersTo="אמיר_אוחנה">אמיר אוחנה</person>
+          <role refersTo="יושב_ראש_הכנסת">יושב ראש הכנסת</role>
+        </signature>
+      </p>
+    </conclusions>
+  </act>
+</akomaNtoso>

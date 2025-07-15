@@ -1,0 +1,268 @@
+:root {
+	--main-line-height: 14pt;
+	--font-family: Georgia, "Times New Roman", serif;
+	--document-height: 297mm;
+	--document-width: 210mm;
+	--document-margin-top: 25mm;
+	--document-margin-bottom: 25mm;
+	--document-margin-right: 25mm;
+	--document-margin-left: 25mm;
+	--heading-margin-top: 10mm;
+	--heading-margin-bottom: 10mm;
+	--footnote-distance-from-text: 3mm;
+
+	--column-width: calc(var(--page-width));
+	--empty-width: calc(var(--page-width) - var(--column-width));
+
+
+	--attachment-separator-height: 1em;
+	--attachment-separator-label: "ATTACHMENT";
+	--attachment-separator-align: center;
+	--attachment-separator-fontsize: 18pt;
+	--attachment-separator-color: auto;
+	--attachment-separator-fontfamily: "verdana";
+	--attachment-separator-margin-top: 1em;
+	--attachment-separator-margin-bottom: 1em;
+}
+
+
+*[pattern="document"] {
+	font-family: var(--font-family);
+	font-size: var(--main-line-height);
+	text-align: justify;
+}
+
+/* Bookmark icon in the quotedStructure element */
+*[name="quotedStructure"]:after {
+	content: 'bookmark';
+	font-family: "Material Icons";
+	font-size: 2em;
+	color: #478552;
+	position: absolute;
+	top: -0.4em;
+	right: 0;
+}
+
+/* ---------------------------------------------------*/
+/*                                                    */
+/*     Stili specifici                                */
+/*                                                    */
+/* ---------------------------------------------------*/
+
+.akn-longTitle,
+.akn-docRef {
+	text-align: center;
+}
+
+
+.akn-docTitle {
+	font-weight: bold;
+	font-size: 110%;
+}
+
+
+.akn-chapter {
+	margin-top: 2em;
+}
+
+.akn-article {
+	margin-top: 0.5em;
+}
+
+.akn-num {
+	font-weight: bold;
+	padding-right: 0.5em;
+}
+
+.akn-heading {
+	font-weight: bold;
+}
+
+.akn-subheading {
+	font-size: 80%;
+	line-height: 2em;
+	font-family: sans-serif;
+	font-style: italic;
+}
+
+.akn-ref,
+.akn-a {
+	color: blue;
+}
+
+.akn-b {
+	font-weight: bold;
+}
+
+.akn-i {
+	font-style: italic;
+}
+
+.akn-u {
+	text-decoration: underline;
+}
+
+.akn-del {
+	text-decoration: line-through;
+}
+
+.akn-ins {
+	font-weight: bold;
+	color: blue;
+}
+
+.akn-sup {
+	vertical-align: super;
+}
+
+.akn-sub {
+	vertical-align: sub;
+}
+
+.akn-subflow {
+	display: block;
+}
+
+.akn-quotedStructure,
+.akn-quotedText {
+	background-color: var(--texthilight) !important;
+}
+
+.akn-embeddedStructure,
+.akn-embeddedText {
+	background-color: var(--background) !important;
+}
+
+.akn-foreign,
+.akn-foreignText {
+	background-color: var(--markupmenubutton2) !important;
+}
+
+.akn-foreign *,
+.akn-foreignText * {
+	color: inherit !important;
+	background-color: inherit !important;
+	padding: revert !important;
+}
+
+.akn-foreignText,
+.akn-foreignText * {
+	display: inline !important;
+}
+
+img {
+	max-width: 100%;
+}
+
+*[name="blockList"] {
+	margin-left: 0;
+	margin-top: 0;
+}
+
+*[name="authorialNote"] {
+	font-size: 80%;
+}
+
+.akn-fillIn {
+	padding: 0.1em;
+	font-style: italic;
+	border: solid 1px gray;
+	background-color: #ffffff !important;
+}
+
+.alwaysOn .akn-fillIn {
+	margin-left: 0em;
+	left: 2em;
+	margin-right: 2em;
+}
+
+.alwaysOn .akn-fillIn:before {
+	position: absolute !important;
+	left: -4em;
+}
+
+.footnoteMarker {
+	font-size: 80%;
+	vertical-align: super;
+	color: black !important;
+	width: 3em;
+	text-align: left;
+}
+
+.printMode .generated.marker {
+	display: inline-block;
+	width: 1em;
+}
+
+.alwaysOn .generated.marker {
+	display: inline;
+	margin-right: 0.5em;
+}
+
+.footnote {
+	font-size: 80%;
+	text-indent: -2em;
+	text-align: justify;
+	text-indent: -1em;
+	margin-left: 3em;
+}
+
+.alwaysOn .footnote>div {
+	max-width: 30em;
+}
+
+.centered {
+	text-align: center;
+}
+
+.large {
+	font-size: 150%;
+}
+
+
+.spaceBefore {
+	padding-top: 1.5em;
+}
+
+.spaceAfter {
+	padding-bottom: 1.5em;
+}
+
+/* ---- Fix for firefox, @media is needed for the pdf otherwise is broken --- */
+@media only screen {
+	.akn-eol {
+		display: inline-block;
+	}
+}
+
+/* ---------------------------------------------------*/
+/*                                                    */
+/*                   Consolidamento                   */
+/*                                                    */
+/* ---------------------------------------------------*/
+
+.consolidation-highlight {
+	/* Red circle */
+	border-radius: 5px !important;
+	box-shadow: 0 0 0 3px #ff5278 !important;
+	display: inline;
+}
+
+.consolidation-highlight-executed {
+	border-radius: 5px !important;
+	box-shadow: 0 0 0 3px #10e33a !important;
+	display: inline !important;
+}
+
+.consolidation-new {
+	/* Green underline*/
+	text-decoration: underline;
+	text-decoration-thickness: 4px;
+	text-decoration-color: #10e33a;
+}
+
+.consolidation-repealed {
+	text-decoration: underline;
+	text-decoration-thickness: 4px;
+	text-decoration-color: #00b9ff;
+}

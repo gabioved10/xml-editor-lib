@@ -1,0 +1,612 @@
+{
+  "_doc": {
+    "REPLACE_CONTENT": "if the replacement is plain-text replaces the content with the text, if the replacement is an element containing the content, replaces the content with the elements content"
+  },
+  "rules": {
+    "preface": {
+      "children": [
+        "preface",
+        "body",
+        "preamble",
+        "attachments"
+      ]
+    }
+  },
+  "replacements": [
+    {
+      "id": "1-num+empty",
+      "selection": "num",
+      "replacement": "empty",
+      "action": "",
+      "_doc": ""
+    },
+    {
+      "id": "2-num+plain-text",
+      "selection": "num",
+      "replacement": "plain-text",
+      "action": "REPLACE_CONTENT",
+      "_doc": ""
+    },
+    {
+      "id": "3-num+plain-text-cr",
+      "selection": "num",
+      "replacement": "plain-text-cr",
+      "action": "SPLIT",
+      "_doc": ""
+    },
+    {
+      "id": "4-num+inline",
+      "selection": "num",
+      "replacement": "inline",
+      "action": "REPLACE_CONTENT",
+      "_doc": ""
+    },
+    {
+      "id": "5-num+inline+content",
+      "selection": "num",
+      "replacement": "inline+content",
+      "action": "REPLACE_CONTENT",
+      "_doc": ""
+    },
+    {
+      "id": "6-num+block",
+      "selection": "num",
+      "replacement": "block",
+      "action": "REJECT",
+      "_doc": ""
+    },
+    {
+      "id": "7-num+block+content",
+      "selection": "num",
+      "replacement": "block+content",
+      "action": "REPLACE_CONTENT",
+      "_doc": ""
+    },
+    {
+      "id": "8-num+num",
+      "selection": "num",
+      "replacement": "num",
+      "action": "",
+      "_doc": ""
+    },
+    {
+      "id": "9-num+num+content",
+      "selection": "num",
+      "replacement": "num+content",
+      "action": "ACCEPT",
+      "_doc": ""
+    },
+    {
+      "id": "10-num+heading",
+      "selection": "num",
+      "replacement": "heading",
+      "action": "REJECT",
+      "_doc": ""
+    },
+    {
+      "id": "11-num+heading+content",
+      "selection": "num",
+      "replacement": "heading+content",
+      "action": "REJECT",
+      "_doc": ""
+    },
+    {
+      "id": "12-num+preface",
+      "selection": "num",
+      "replacement": "preface",
+      "action": "REJECT",
+      "_doc": ""
+    },
+    {
+      "id": "13-num+preface+content",
+      "selection": "num",
+      "replacement": "preface+content",
+      "action": "REJECT",
+      "_doc": ""
+    },
+    {
+      "id": "14-num+preamble",
+      "selection": "num",
+      "replacement": "preamble",
+      "action": "REJECT",
+      "_doc": ""
+    },
+    {
+      "id": "15-num+preamble+content",
+      "selection": "num",
+      "replacement": "preamble+content",
+      "action": "REJECT",
+      "_doc": ""
+    },
+    {
+      "id": "16-num+coverPage",
+      "selection": "num",
+      "replacement": "coverPage",
+      "action": "REJECT",
+      "_doc": ""
+    },
+    {
+      "id": "17-num+coverPage+content",
+      "selection": "num",
+      "replacement": "coverPage+content",
+      "action": "REJECT",
+      "_doc": ""
+    },
+    {
+      "id": "18-heading+empty",
+      "selection": "heading",
+      "replacement": "empty",
+      "action": "REMOVE",
+      "_doc": ""
+    },
+    {
+      "id": "19-heading+plain-text",
+      "selection": "heading",
+      "replacement": "plain-text",
+      "action": "REPLACE_CONTENT",
+      "_doc": ""
+    },
+    {
+      "id": "20-heading+plain-text-cr",
+      "selection": "heading",
+      "replacement": "plain-text-cr",
+      "action": "SPLIT",
+      "_doc": ""
+    },
+    {
+      "id": "21-heading+inline",
+      "selection": "heading",
+      "replacement": "inline",
+      "action": "REPLACE_CONTENT",
+      "_doc": ""
+    },
+    {
+      "id": "22-heading+inline+content",
+      "selection": "heading",
+      "replacement": "inline+content",
+      "action": "REPLACE_CONTENT",
+      "_doc": ""
+    },
+    {
+      "id": "23-heading+block",
+      "selection": "heading",
+      "replacement": "block",
+      "action": "REJECT",
+      "_doc": ""
+    },
+    {
+      "id": "24-heading+block+content",
+      "selection": "heading",
+      "replacement": "block+content",
+      "action": "",
+      "_doc": ""
+    },
+    {
+      "id": "25-heading+num",
+      "selection": "heading",
+      "replacement": "num",
+      "action": "REJECT",
+      "_doc": ""
+    },
+    {
+      "id": "26-heading+num+content",
+      "selection": "heading",
+      "replacement": "num+content",
+      "action": "REJECT",
+      "_doc": ""
+    },
+    {
+      "id": "27-heading+heading",
+      "selection": "heading",
+      "replacement": "heading",
+      "action": "",
+      "_doc": ""
+    },
+    {
+      "id": "28-heading+heading+content",
+      "selection": "heading",
+      "replacement": "heading+content",
+      "action": "ACCEPT",
+      "_doc": ""
+    },
+    {
+      "id": "29-heading+preface",
+      "selection": "heading",
+      "replacement": "preface",
+      "action": "REJECT",
+      "_doc": ""
+    },
+    {
+      "id": "30-heading+preface+content",
+      "selection": "heading",
+      "replacement": "preface+content",
+      "action": "REJECT",
+      "_doc": ""
+    },
+    {
+      "id": "31-heading+preamble",
+      "selection": "heading",
+      "replacement": "preamble",
+      "action": "REJECT",
+      "_doc": ""
+    },
+    {
+      "id": "32-heading+preamble+content",
+      "selection": "heading",
+      "replacement": "preamble+content",
+      "action": "REJECT",
+      "_doc": ""
+    },
+    {
+      "id": "33-heading+coverPage",
+      "selection": "heading",
+      "replacement": "coverPage",
+      "action": "REJECT",
+      "_doc": ""
+    },
+    {
+      "id": "34-heading+coverPage+content",
+      "selection": "heading",
+      "replacement": "coverPage+content",
+      "action": "REJECT",
+      "_doc": ""
+    },
+    {
+      "id": "35-preface+empty",
+      "selection": "preface",
+      "replacement": "empty",
+      "action": "ACCEPT",
+      "_doc": ""
+    },
+    {
+      "id": "36-preface+plain-text",
+      "selection": "preface",
+      "replacement": "plain-text",
+      "action": "REJECT",
+      "_doc": ""
+    },
+    {
+      "id": "37-preface+plain-text-cr",
+      "selection": "preface",
+      "replacement": "plain-text-cr",
+      "action": "SPLIT",
+      "_doc": ""
+    },
+    {
+      "id": "38-preface+inline",
+      "selection": "preface",
+      "replacement": "inline",
+      "action": "REJECT",
+      "_doc": ""
+    },
+    {
+      "id": "39-preface+inline+content",
+      "selection": "preface",
+      "replacement": "inline+content",
+      "action": "REJECT",
+      "_doc": ""
+    },
+    {
+      "id": "40-preface+block",
+      "selection": "preface",
+      "replacement": "block",
+      "action": "",
+      "_doc": "insert at end"
+    },
+    {
+      "id": "41-preface+block+content",
+      "selection": "preface",
+      "replacement": "block+content",
+      "action": "REPLACE_CONTENT",
+      "_doc": ""
+    },
+    {
+      "id": "42-preface+num",
+      "selection": "preface",
+      "replacement": "num",
+      "action": "REJECT",
+      "_doc": ""
+    },
+    {
+      "id": "43-preface+num+content",
+      "selection": "preface",
+      "replacement": "num+content",
+      "action": "REJECT",
+      "_doc": ""
+    },
+    {
+      "id": "44-preface+heading",
+      "selection": "preface",
+      "replacement": "heading",
+      "action": "REJECT",
+      "_doc": ""
+    },
+    {
+      "id": "45-preface+heading+content",
+      "selection": "preface",
+      "replacement": "heading+content",
+      "action": "REJECT",
+      "_doc": ""
+    },
+    {
+      "id": "46-preface+preface",
+      "selection": "preface",
+      "replacement": "preface",
+      "action": "",
+      "_doc": ""
+    },
+    {
+      "id": "47-preface+preface+content",
+      "selection": "preface",
+      "replacement": "preface+content",
+      "action": "ACCEPT",
+      "_doc": ""
+    },
+    {
+      "id": "48-preface+preamble",
+      "selection": "preface",
+      "replacement": "preamble",
+      "action": "REJECT",
+      "_doc": ""
+    },
+    {
+      "id": "49-preface+preamble+content",
+      "selection": "preface",
+      "replacement": "preamble+content",
+      "action": "ACCEPT",
+      "_doc": ""
+    },
+    {
+      "id": "50-preface+coverPage",
+      "selection": "preface",
+      "replacement": "coverPage",
+      "action": "REJECT",
+      "_doc": ""
+    },
+    {
+      "id": "51-preface+coverPage+content",
+      "selection": "preface",
+      "replacement": "coverPage+content",
+      "action": "ACCEPT",
+      "_doc": ""
+    },
+    {
+      "id": "52-preamble+empty",
+      "selection": "preamble",
+      "replacement": "empty",
+      "action": "ACCEPT",
+      "_doc": ""
+    },
+    {
+      "id": "53-preamble+plain-text",
+      "selection": "preamble",
+      "replacement": "plain-text",
+      "action": "REJECT",
+      "_doc": ""
+    },
+    {
+      "id": "54-preamble+plain-text-cr",
+      "selection": "preamble",
+      "replacement": "plain-text-cr",
+      "action": "SPLIT",
+      "_doc": ""
+    },
+    {
+      "id": "55-preamble+inline",
+      "selection": "preamble",
+      "replacement": "inline",
+      "action": "REJECT",
+      "_doc": ""
+    },
+    {
+      "id": "56-preamble+inline+content",
+      "selection": "preamble",
+      "replacement": "inline+content",
+      "action": "REJECT",
+      "_doc": ""
+    },
+    {
+      "id": "57-preamble+block",
+      "selection": "preamble",
+      "replacement": "block",
+      "action": "",
+      "_doc": "insert at end"
+    },
+    {
+      "id": "58-preamble+block+content",
+      "selection": "preamble",
+      "replacement": "block+content",
+      "action": "REPLACE_CONTENT",
+      "_doc": ""
+    },
+    {
+      "id": "59-preamble+num",
+      "selection": "preamble",
+      "replacement": "num",
+      "action": "REJECT",
+      "_doc": ""
+    },
+    {
+      "id": "60-preamble+num+content",
+      "selection": "preamble",
+      "replacement": "num+content",
+      "action": "REJECT",
+      "_doc": ""
+    },
+    {
+      "id": "61-preamble+heading",
+      "selection": "preamble",
+      "replacement": "heading",
+      "action": "REJECT",
+      "_doc": ""
+    },
+    {
+      "id": "62-preamble+heading+content",
+      "selection": "preamble",
+      "replacement": "heading+content",
+      "action": "REJECT",
+      "_doc": ""
+    },
+    {
+      "id": "63-preamble+preface",
+      "selection": "preamble",
+      "replacement": "preface",
+      "action": "",
+      "_doc": ""
+    },
+    {
+      "id": "64-preamble+preface+content",
+      "selection": "preamble",
+      "replacement": "preface+content",
+      "action": "ACCEPT",
+      "_doc": ""
+    },
+    {
+      "id": "65-preamble+preamble",
+      "selection": "preamble",
+      "replacement": "preamble",
+      "action": "",
+      "_doc": ""
+    },
+    {
+      "id": "66-preamble+preamble+content",
+      "selection": "preamble",
+      "replacement": "preamble+content",
+      "action": "ACCEPT",
+      "_doc": ""
+    },
+    {
+      "id": "67-preamble+coverPage",
+      "selection": "preamble",
+      "replacement": "coverPage",
+      "action": "",
+      "_doc": ""
+    },
+    {
+      "id": "68-preamble+coverPage+content",
+      "selection": "preamble",
+      "replacement": "coverPage+content",
+      "action": "ACCEPT",
+      "_doc": ""
+    },
+    {
+      "id": "69-coverPage+empty",
+      "selection": "coverPage",
+      "replacement": "empty",
+      "action": "ACCEPT",
+      "_doc": ""
+    },
+    {
+      "id": "70-coverPage+plain-text",
+      "selection": "coverPage",
+      "replacement": "plain-text",
+      "action": "REJECT",
+      "_doc": ""
+    },
+    {
+      "id": "71-coverPage+plain-text-cr",
+      "selection": "coverPage",
+      "replacement": "plain-text-cr",
+      "action": "SPLIT",
+      "_doc": ""
+    },
+    {
+      "id": "72-coverPage+inline",
+      "selection": "coverPage",
+      "replacement": "inline",
+      "action": "REJECT",
+      "_doc": ""
+    },
+    {
+      "id": "73-coverPage+inline+content",
+      "selection": "coverPage",
+      "replacement": "inline+content",
+      "action": "REJECT",
+      "_doc": ""
+    },
+    {
+      "id": "74-coverPage+block",
+      "selection": "coverPage",
+      "replacement": "block",
+      "action": "",
+      "_doc": "insert at end"
+    },
+    {
+      "id": "75-coverPage+block+content",
+      "selection": "coverPage",
+      "replacement": "block+content",
+      "action": "REPLACE_CONTENT",
+      "_doc": ""
+    },
+    {
+      "id": "76-coverPage+num",
+      "selection": "coverPage",
+      "replacement": "num",
+      "action": "REJECT",
+      "_doc": ""
+    },
+    {
+      "id": "77-coverPage+num+content",
+      "selection": "coverPage",
+      "replacement": "num+content",
+      "action": "REJECT",
+      "_doc": ""
+    },
+    {
+      "id": "78-coverPage+heading",
+      "selection": "coverPage",
+      "replacement": "heading",
+      "action": "REJECT",
+      "_doc": ""
+    },
+    {
+      "id": "79-coverPage+heading+content",
+      "selection": "coverPage",
+      "replacement": "heading+content",
+      "action": "REJECT",
+      "_doc": ""
+    },
+    {
+      "id": "80-coverPage+preface",
+      "selection": "coverPage",
+      "replacement": "preface",
+      "action": "",
+      "_doc": ""
+    },
+    {
+      "id": "81-coverPage+preface+content",
+      "selection": "coverPage",
+      "replacement": "preface+content",
+      "action": "ACCEPT",
+      "_doc": ""
+    },
+    {
+      "id": "82-coverPage+preamble",
+      "selection": "coverPage",
+      "replacement": "preamble",
+      "action": "",
+      "_doc": ""
+    },
+    {
+      "id": "83-coverPage+preamble+content",
+      "selection": "coverPage",
+      "replacement": "preamble+content",
+      "action": "ACCEPT",
+      "_doc": ""
+    },
+    {
+      "id": "84-coverPage+coverPage",
+      "selection": "coverPage",
+      "replacement": "coverPage",
+      "action": "",
+      "_doc": ""
+    },
+    {
+      "id": "85-coverPage+coverPage+content",
+      "selection": "coverPage",
+      "replacement": "coverPage+content",
+      "action": "ACCEPT",
+      "_doc": ""
+    }
+  ]
+}

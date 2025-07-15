@@ -1,0 +1,586 @@
+{
+	"balanced-collapsed": {
+		"block": {
+			"ENTER": "create-new-and-split",
+			"SHIFT_ENTER": "create-new-and-split",
+			"BACKSPACE": "collapse-blocks-or-jump-to-previous",
+			"DELETE": "",
+			"ESC": "",
+			"INPUT": "default-input",
+			"SPECIAL_CASES": {
+				"hcontainer": {
+					"ENTER": "create-new-hcontainer",
+					"SHIFT_ENTER": "create-new-and-split",
+					"TAB": "create-new-and-upgrade"
+				},
+				"recital": {
+					"ENTER": "create-new-hcontainer",
+					"SHIFT_ENTER": "create-new-and-split",
+					"TAB": "create-new-and-upgrade"
+				},
+				"item": {
+					"ENTER": "create-new-hcontainer",
+					"SHIFT_ENTER": "create-new-and-split",
+					"TAB": "create-new-and-upgrade"
+				},
+				"citation": {
+					"ENTER": "create-new-hcontainer",
+					"SHIFT_ENTER": "create-new-and-split",
+					"TAB": "create-new-and-upgrade"
+				}
+			}
+		},
+		"num": {
+			"ENTER": "jump-to-next",
+			"SHIFT_ENTER": "jump-to-next",
+			"BACKSPACE": "jump-to-previous",
+			"DELETE": "",
+			"ESC": "",
+			"INPUT": "default-input",
+			"SPECIAL_CASES": {}
+		},
+		"heading": {
+			"ENTER": "jump-to-next",
+			"SHIFT_ENTER": "",
+			"BACKSPACE": "jump-to-previous",
+			"DELETE": "",
+			"ESC": "",
+			"INPUT": "default-input",
+			"SPECIAL_CASES": {}
+		},
+		"subheading": {
+			"ENTER": "",
+			"SHIFT_ENTER": "",
+			"BACKSPACE": "",
+			"DELETE": "",
+			"ESC": "",
+			"INPUT": "default-input",
+			"SPECIAL_CASES": {}
+		},
+		"inline": {
+			"ENTER": "",
+			"SHIFT_ENTER": "",
+			"BACKSPACE": "delete-element",
+			"DELETE": "",
+			"ESC": "",
+			"INPUT": "default-input",
+			"SPECIAL_CASES": {}
+		},
+		"not-akn": {
+			"ENTER": "",
+			"SHIFT_ENTER": "",
+			"BACKSPACE": "",
+			"DELETE": "",
+			"ESC": "",
+			"INPUT": "default-input",
+			"SPECIAL_CASES": {}
+		},
+		"document": {
+			"ENTER": "default-input",
+			"SHIFT_ENTER": ""
+		},
+		"container": {
+			"ENTER": "default-input",
+			"SHIFT_ENTER": ""
+		}
+	},
+	"balanced-not-collapsed": {
+		"block": {
+			"ENTER": "",
+			"SHIFT_ENTER": "",
+			"BACKSPACE": "default-backspace",
+			"DELETE": "",
+			"ESC": "",
+			"INPUT": "default-input",
+			"SPECIAL_CASES": {}
+		},
+		"num": {
+			"ENTER": "",
+			"SHIFT_ENTER": "",
+			"BACKSPACE": "",
+			"DELETE": "",
+			"ESC": "",
+			"INPUT": "default-input",
+			"SPECIAL_CASES": {}
+		},
+		"heading": {
+			"ENTER": "",
+			"SHIFT_ENTER": "",
+			"BACKSPACE": "",
+			"DELETE": "",
+			"ESC": "",
+			"INPUT": "default-input",
+			"SPECIAL_CASES": {}
+		},
+		"subheading": {
+			"ENTER": "",
+			"SHIFT_ENTER": "",
+			"BACKSPACE": "",
+			"DELETE": "",
+			"ESC": "",
+			"INPUT": "",
+			"SPECIAL_CASES": {}
+		},
+		"inline": {
+			"ENTER": "",
+			"SHIFT_ENTER": "",
+			"BACKSPACE": "",
+			"DELETE": "",
+			"ESC": "",
+			"INPUT": "default-input",
+			"SPECIAL_CASES": {}
+		},
+		"not-akn": {
+			"ENTER": "",
+			"SHIFT_ENTER": "",
+			"BACKSPACE": "",
+			"DELETE": "",
+			"ESC": "",
+			"INPUT": "default-input",
+			"SPECIAL_CASES": {}
+		}
+	},
+	"unbalanced": {
+		"block|block": {
+			"ENTER": "",
+			"SHIFT_ENTER": "",
+			"BACKSPACE": "",
+			"DELETE": "",
+			"ESC": "",
+			"INPUT": "",
+			"SPECIAL_CASES": {}
+		},
+		"block|num": {
+			"ENTER": "",
+			"SHIFT_ENTER": "",
+			"BACKSPACE": "",
+			"DELETE": "",
+			"ESC": "",
+			"INPUT": "",
+			"SPECIAL_CASES": {}
+		},
+		"block|heading": {
+			"ENTER": "",
+			"SHIFT_ENTER": "",
+			"BACKSPACE": "",
+			"DELETE": "",
+			"ESC": "",
+			"INPUT": "",
+			"SPECIAL_CASES": {}
+		},
+		"block|subheading": {
+			"ENTER": "",
+			"SHIFT_ENTER": "",
+			"BACKSPACE": "",
+			"DELETE": "",
+			"ESC": "",
+			"INPUT": "",
+			"SPECIAL_CASES": {}
+		},
+		"block|content": {
+			"ENTER": "",
+			"SHIFT_ENTER": "",
+			"BACKSPACE": "",
+			"DELETE": "",
+			"ESC": "",
+			"INPUT": "",
+			"SPECIAL_CASES": {}
+		},
+		"block|inline": {
+			"ENTER": "",
+			"SHIFT_ENTER": "",
+			"BACKSPACE": "",
+			"DELETE": "",
+			"ESC": "",
+			"INPUT": "",
+			"SPECIAL_CASES": {}
+		},
+		"block|not-akn": {
+			"ENTER": "",
+			"SHIFT_ENTER": "",
+			"BACKSPACE": "",
+			"DELETE": "",
+			"ESC": "",
+			"INPUT": "",
+			"SPECIAL_CASES": {}
+		},
+		"num|block": {
+			"ENTER": "",
+			"SHIFT_ENTER": "",
+			"BACKSPACE": "",
+			"DELETE": "",
+			"ESC": "",
+			"INPUT": "",
+			"SPECIAL_CASES": {}
+		},
+		"num|num": {
+			"ENTER": "",
+			"SHIFT_ENTER": "",
+			"BACKSPACE": "",
+			"DELETE": "",
+			"ESC": "",
+			"INPUT": "",
+			"SPECIAL_CASES": {}
+		},
+		"num|heading": {
+			"ENTER": "",
+			"SHIFT_ENTER": "",
+			"BACKSPACE": "",
+			"DELETE": "",
+			"ESC": "",
+			"INPUT": "",
+			"SPECIAL_CASES": {}
+		},
+		"num|subheading": {
+			"ENTER": "",
+			"SHIFT_ENTER": "",
+			"BACKSPACE": "",
+			"DELETE": "",
+			"ESC": "",
+			"INPUT": "",
+			"SPECIAL_CASES": {}
+		},
+		"num|content": {
+			"ENTER": "",
+			"SHIFT_ENTER": "",
+			"BACKSPACE": "",
+			"DELETE": "",
+			"ESC": "",
+			"INPUT": "",
+			"SPECIAL_CASES": {}
+		},
+		"num|inline": {
+			"ENTER": "",
+			"SHIFT_ENTER": "",
+			"BACKSPACE": "",
+			"DELETE": "",
+			"ESC": "",
+			"INPUT": "",
+			"SPECIAL_CASES": {}
+		},
+		"num|not-akn": {
+			"ENTER": "",
+			"SHIFT_ENTER": "",
+			"BACKSPACE": "",
+			"DELETE": "",
+			"ESC": "",
+			"INPUT": "",
+			"SPECIAL_CASES": {}
+		},
+		"heading|block": {
+			"ENTER": "",
+			"SHIFT_ENTER": "",
+			"BACKSPACE": "",
+			"DELETE": "",
+			"ESC": "",
+			"INPUT": "",
+			"SPECIAL_CASES": {}
+		},
+		"heading|num": {
+			"ENTER": "",
+			"SHIFT_ENTER": "",
+			"BACKSPACE": "",
+			"DELETE": "",
+			"ESC": "",
+			"INPUT": "",
+			"SPECIAL_CASES": {}
+		},
+		"heading|heading": {
+			"ENTER": "",
+			"SHIFT_ENTER": "",
+			"BACKSPACE": "",
+			"DELETE": "",
+			"ESC": "",
+			"INPUT": "",
+			"SPECIAL_CASES": {}
+		},
+		"heading|subheading": {
+			"ENTER": "",
+			"SHIFT_ENTER": "",
+			"BACKSPACE": "",
+			"DELETE": "",
+			"ESC": "",
+			"INPUT": "",
+			"SPECIAL_CASES": {}
+		},
+		"heading|content": {
+			"ENTER": "",
+			"SHIFT_ENTER": "",
+			"BACKSPACE": "",
+			"DELETE": "",
+			"ESC": "",
+			"INPUT": "",
+			"SPECIAL_CASES": {}
+		},
+		"heading|inline": {
+			"ENTER": "",
+			"SHIFT_ENTER": "",
+			"BACKSPACE": "",
+			"DELETE": "",
+			"ESC": "",
+			"INPUT": "",
+			"SPECIAL_CASES": {}
+		},
+		"heading|not-akn": {
+			"ENTER": "",
+			"SHIFT_ENTER": "",
+			"BACKSPACE": "",
+			"DELETE": "",
+			"ESC": "",
+			"INPUT": "",
+			"SPECIAL_CASES": {}
+		},
+		"subheading|block": {
+			"ENTER": "",
+			"SHIFT_ENTER": "",
+			"BACKSPACE": "",
+			"DELETE": "",
+			"ESC": "",
+			"INPUT": "",
+			"SPECIAL_CASES": {}
+		},
+		"subheading|num": {
+			"ENTER": "",
+			"SHIFT_ENTER": "",
+			"BACKSPACE": "",
+			"DELETE": "",
+			"ESC": "",
+			"INPUT": "",
+			"SPECIAL_CASES": {}
+		},
+		"subheading|heading": {
+			"ENTER": "",
+			"SHIFT_ENTER": "",
+			"BACKSPACE": "",
+			"DELETE": "",
+			"ESC": "",
+			"INPUT": "",
+			"SPECIAL_CASES": {}
+		},
+		"subheading|subheading": {
+			"ENTER": "",
+			"SHIFT_ENTER": "",
+			"BACKSPACE": "",
+			"DELETE": "",
+			"ESC": "",
+			"INPUT": "",
+			"SPECIAL_CASES": {}
+		},
+		"subheading|content": {
+			"ENTER": "",
+			"SHIFT_ENTER": "",
+			"BACKSPACE": "",
+			"DELETE": "",
+			"ESC": "",
+			"INPUT": "",
+			"SPECIAL_CASES": {}
+		},
+		"subheading|inline": {
+			"ENTER": "",
+			"SHIFT_ENTER": "",
+			"BACKSPACE": "",
+			"DELETE": "",
+			"ESC": "",
+			"INPUT": "",
+			"SPECIAL_CASES": {}
+		},
+		"subheading|not-akn": {
+			"ENTER": "",
+			"SHIFT_ENTER": "",
+			"BACKSPACE": "",
+			"DELETE": "",
+			"ESC": "",
+			"INPUT": "",
+			"SPECIAL_CASES": {}
+		},
+		"content|block": {
+			"ENTER": "",
+			"SHIFT_ENTER": "",
+			"BACKSPACE": "",
+			"DELETE": "",
+			"ESC": "",
+			"INPUT": "",
+			"SPECIAL_CASES": {}
+		},
+		"content|num": {
+			"ENTER": "",
+			"SHIFT_ENTER": "",
+			"BACKSPACE": "",
+			"DELETE": "",
+			"ESC": "",
+			"INPUT": "",
+			"SPECIAL_CASES": {}
+		},
+		"content|heading": {
+			"ENTER": "",
+			"SHIFT_ENTER": "",
+			"BACKSPACE": "",
+			"DELETE": "",
+			"ESC": "",
+			"INPUT": "",
+			"SPECIAL_CASES": {}
+		},
+		"content|subheading": {
+			"ENTER": "",
+			"SHIFT_ENTER": "",
+			"BACKSPACE": "",
+			"DELETE": "",
+			"ESC": "",
+			"INPUT": "",
+			"SPECIAL_CASES": {}
+		},
+		"content|content": {
+			"ENTER": "",
+			"SHIFT_ENTER": "",
+			"BACKSPACE": "",
+			"DELETE": "",
+			"ESC": "",
+			"INPUT": "",
+			"SPECIAL_CASES": {}
+		},
+		"content|inline": {
+			"ENTER": "",
+			"SHIFT_ENTER": "",
+			"BACKSPACE": "",
+			"DELETE": "",
+			"ESC": "",
+			"INPUT": "",
+			"SPECIAL_CASES": {}
+		},
+		"content|not-akn": {
+			"ENTER": "",
+			"SHIFT_ENTER": "",
+			"BACKSPACE": "",
+			"DELETE": "",
+			"ESC": "",
+			"INPUT": "",
+			"SPECIAL_CASES": {}
+		},
+		"inline|block": {
+			"ENTER": "",
+			"SHIFT_ENTER": "",
+			"BACKSPACE": "",
+			"DELETE": "",
+			"ESC": "",
+			"INPUT": "",
+			"SPECIAL_CASES": {}
+		},
+		"inline|num": {
+			"ENTER": "",
+			"SHIFT_ENTER": "",
+			"BACKSPACE": "",
+			"DELETE": "",
+			"ESC": "",
+			"INPUT": "",
+			"SPECIAL_CASES": {}
+		},
+		"inline|heading": {
+			"ENTER": "",
+			"SHIFT_ENTER": "",
+			"BACKSPACE": "",
+			"DELETE": "",
+			"ESC": "",
+			"INPUT": "",
+			"SPECIAL_CASES": {}
+		},
+		"inline|subheading": {
+			"ENTER": "",
+			"SHIFT_ENTER": "",
+			"BACKSPACE": "",
+			"DELETE": "",
+			"ESC": "",
+			"INPUT": "",
+			"SPECIAL_CASES": {}
+		},
+		"inline|content": {
+			"ENTER": "",
+			"SHIFT_ENTER": "",
+			"BACKSPACE": "",
+			"DELETE": "",
+			"ESC": "",
+			"INPUT": "",
+			"SPECIAL_CASES": {}
+		},
+		"inline|inline": {
+			"ENTER": "",
+			"SHIFT_ENTER": "",
+			"BACKSPACE": "",
+			"DELETE": "",
+			"ESC": "",
+			"INPUT": "",
+			"SPECIAL_CASES": {}
+		},
+		"inline|not-akn": {
+			"ENTER": "",
+			"SHIFT_ENTER": "",
+			"BACKSPACE": "",
+			"DELETE": "",
+			"ESC": "",
+			"INPUT": "",
+			"SPECIAL_CASES": {}
+		},
+		"not-akn|block": {
+			"ENTER": "",
+			"SHIFT_ENTER": "",
+			"BACKSPACE": "",
+			"DELETE": "",
+			"ESC": "",
+			"INPUT": "",
+			"SPECIAL_CASES": {}
+		},
+		"not-akn|num": {
+			"ENTER": "",
+			"SHIFT_ENTER": "",
+			"BACKSPACE": "",
+			"DELETE": "",
+			"ESC": "",
+			"INPUT": "",
+			"SPECIAL_CASES": {}
+		},
+		"not-akn|heading": {
+			"ENTER": "",
+			"SHIFT_ENTER": "",
+			"BACKSPACE": "",
+			"DELETE": "",
+			"ESC": "",
+			"INPUT": "",
+			"SPECIAL_CASES": {}
+		},
+		"not-akn|subheading": {
+			"ENTER": "",
+			"SHIFT_ENTER": "",
+			"BACKSPACE": "",
+			"DELETE": "",
+			"ESC": "",
+			"INPUT": "",
+			"SPECIAL_CASES": {}
+		},
+		"not-akn|content": {
+			"ENTER": "",
+			"SHIFT_ENTER": "",
+			"BACKSPACE": "",
+			"DELETE": "",
+			"ESC": "",
+			"INPUT": "",
+			"SPECIAL_CASES": {}
+		},
+		"not-akn|inline": {
+			"ENTER": "",
+			"SHIFT_ENTER": "",
+			"BACKSPACE": "",
+			"DELETE": "",
+			"ESC": "",
+			"INPUT": "",
+			"SPECIAL_CASES": {}
+		},
+		"not-akn|not-akn": {
+			"ENTER": "",
+			"SHIFT_ENTER": "",
+			"BACKSPACE": "",
+			"DELETE": "",
+			"ESC": "",
+			"INPUT": "",
+			"SPECIAL_CASES": {}
+		}
+	}
+}

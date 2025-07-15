@@ -1,6 +1,6 @@
 <div class="editor-wrapper">
   <h2>XML Editor</h2>
-   <button (click)="fileInput.click()">Browse XML</button>
+   <button class="convert-btn" (click)="fileInput.click()">Browse XML</button>
    <input type="file" #fileInput accept=".xml" (change)="onFileSelected($event)" style="display: none;" />
   <editor
     [init]="tinymceConfig"

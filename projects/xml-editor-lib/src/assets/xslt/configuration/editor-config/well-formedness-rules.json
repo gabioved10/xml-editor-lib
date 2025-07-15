@@ -1,0 +1,117 @@
+{
+  "_doc": "for every rule, given the selection and the replacement type, return an action to perform",
+  "replacements": [
+    {
+      "id": "1-empty+empty",
+      "selection": "empty",
+      "replacement": "empty",
+      "action": "",
+      "_doc": ""
+    },
+    {
+      "id": "2-empty+plain-text",
+      "selection": "empty",
+      "replacement": "plain-text",
+      "action": "ACCEPT",
+      "_doc": "Insert, Continue to pattern check"
+    },
+    {
+      "id": "3-empty+balanced",
+      "selection": "empty",
+      "replacement": "balanced",
+      "action": "ACCEPT",
+      "_doc": "Insert, Continue to pattern check"
+    },
+    {
+      "id": "4-empty+unbalanced",
+      "selection": "empty",
+      "replacement": "unbalanced",
+      "action": "REJECT",
+      "_doc": "Balance and insert"
+    },
+    {
+      "id": "5-plain-text+empty",
+      "selection": "plain-text",
+      "replacement": "empty",
+      "action": "ACCEPT",
+      "_doc": "Remove"
+    },
+    {
+      "id": "6-plain-text+plain-text",
+      "selection": "plain-text",
+      "replacement": "plain-text",
+      "action": "ACCEPT",
+      "_doc": "Replace, Continue to pattern check"
+    },
+    {
+      "id": "7-plain-text+balanced",
+      "selection": "plain-text",
+      "replacement": "balanced",
+      "action": "ACCEPT",
+      "_doc": "Replace, Continue to pattern check"
+    },
+    {
+      "id": "8-plain-text+unbalanced",
+      "selection": "plain-text",
+      "replacement": "unbalanced",
+      "action": "REJECT",
+      "_doc": "Balance and replace"
+    },
+    {
+      "id": "9-balanced+empty",
+      "selection": "balanced",
+      "replacement": "empty",
+      "action": "ACCEPT",
+      "_doc": "Remove"
+    },
+    {
+      "id": "10-balanced+plain-text",
+      "selection": "balanced",
+      "replacement": "plain-text",
+      "action": "ACCEPT",
+      "_doc": "Replace, Continue to pattern check"
+    },
+    {
+      "id": "11-balanced+balanced",
+      "selection": "balanced",
+      "replacement": "balanced",
+      "action": "ACCEPT",
+      "_doc": "Replace, Continue to pattern check"
+    },
+    {
+      "id": "12-balanced+unbalanced",
+      "selection": "balanced",
+      "replacement": "unbalanced",
+      "action": "REJECT",
+      "_doc": "Balance and replace"
+    },
+    {
+      "id": "13-unbalanced+empty",
+      "selection": "unbalanced",
+      "replacement": "empty",
+      "action": "REJECT",
+      "_doc": "Continue to pattern check"
+    },
+    {
+      "id": "14-unbalanced+plain-text",
+      "selection": "unbalanced",
+      "replacement": "plain-text",
+      "action": "REJECT",
+      "_doc": "Continue to pattern check"
+    },
+    {
+      "id": "15-unbalanced+balanced",
+      "selection": "unbalanced",
+      "replacement": "balanced",
+      "action": "REJECT",
+      "_doc": "Continue to pattern check"
+    },
+    {
+      "id": "16-unbalanced+unbalanced",
+      "selection": "unbalanced",
+      "replacement": "unbalanced",
+      "action": "REJECT",
+      "_doc": ""
+    }
+  ]
+}

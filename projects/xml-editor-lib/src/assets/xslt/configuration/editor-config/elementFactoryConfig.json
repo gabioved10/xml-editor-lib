@@ -1,0 +1,156 @@
+{
+	"act": {
+		"pattern": "document",
+		"content": {
+			"default": "act>preface+preamble+body+conclusions"
+		},
+		"uniqueStructuralElements": [
+			"coverPage",
+			"preface",
+			"preamble",
+			"body",
+			"conclusions",
+			"attachments"
+		]
+	},
+	"doc": {
+		"pattern": "document",
+		"content": {
+			"default": "doc>body"
+		},
+		"uniqueStructuralElements": [
+			"coverPage",
+			"preface",
+			"preamble",
+			"body",
+			"conclusions",
+			"attachments"
+		]
+	},
+	"bill": {
+		"pattern": "document",
+		"content": {
+			"default": "bill>body"
+		},
+		"uniqueStructuralElements": [
+			"coverPage",
+			"preface",
+			"preamble",
+			"body",
+			"conclusions",
+			"attachments"
+		]
+	},
+	"preface": {
+		"pattern": "container",
+		"content": {
+			"default": "preface",
+			"act": "preface>p"
+		}
+	},
+	"preamble": {
+		"pattern": "container",
+		"content": {
+			"default": "preamble",
+			"act": "preamble"
+		}
+	},
+	"body": {
+		"pattern": "container",
+		"content": {
+			"default": "body",
+			"act": "body",
+			"doc": "body",
+			"bill": "body"
+		}
+	},
+	"coverPage": {
+		"pattern": "container",
+		"content": {
+			"default": "coverPage>p"
+		}
+	},
+	"section": {
+		"pattern": "hcontainer",
+		"content": {
+			"default": "section.numHeadingStyle>num+heading+article"
+		}
+	},
+	"chapter": {
+		"pattern": "hcontainer",
+		"content": {
+			"default": "chapter.numHeadingStyle>num+heading+paragraph"
+		}
+	},
+	"num": {
+		"pattern": "num",
+		"content": {
+			"default": "num.auto"
+		}
+	},
+	"heading": {
+		"pattern": "heading",
+		"content": {
+			"default": "heading[Heading for section ]",
+			"section": "heading[Heading for section ]",
+			"chapter": "heading[Heading for chapter ]",
+			"article": "heading.autoNumber[Heading for article ]"
+		}
+	},
+	"paragraph": {
+		"pattern": "hcontainer",
+		"content": {
+			"default": "paragraph"
+		}
+	},
+	"article": {
+		"pattern": "hcontainer",
+		"content": {
+			"default": "article.numHeadingStyle>num+heading+clause"
+		}
+	},
+	"clause": {
+		"pattern": "hcontainer",
+		"content": {
+			"default": "clause.numStyle>num+content"
+		}
+	},
+	"content": {
+		"pattern": "container",
+		"content": {
+			"default": "content>p"
+		}
+	},
+	"p": {
+		"pattern": "block",
+		"content": {
+			"preface": "p>docType+docNumber+docDate",
+			"default": "p[INSERT TEXT]",
+			"coverPage": "p[testing cover page content]"
+		}
+	},
+	"docType": {
+		"pattern": "inline",
+		"content": {
+			"p": "docType"
+		}
+	},
+	"docNumber": {
+		"pattern": "inline",
+		"content": {
+			"p": "docNumber"
+		}
+	},
+	"docDate": {
+		"pattern": "inline",
+		"content": {
+			"p": "docDate"
+		}
+	},
+	"conclusions": {
+		"pattern": "container",
+		"content": {
+			"default": "conclusions>p"
+		}
+	}
+}

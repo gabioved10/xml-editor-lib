@@ -1,0 +1,38 @@
+[
+  {
+    "name": "documentCollection",
+    "value": "pn-arabic pn-rightleft"
+  },
+  {
+    "name": "bill",
+    "value": "pn-arabic pn-rightleft"
+  },
+  {
+    "name": "act",
+    "value": "pn-arabic pn-rightleft"
+  },
+  {
+    "name": "coverPage",
+    "value": "pb-fullpage hf-none"
+  },
+  {
+    "name": "book",
+    "value": "nhc-stacked"
+  },
+  {
+    "name": "chapter",
+    "value": "nhc-stacked"
+  },
+  {
+    "name": "article",
+    "value": "nhc-indent nc-indent hc-indent"
+  },
+  {
+    "name": "paragraph",
+    "value": "nhc-align nc-indent hc-indent"
+  },
+  {
+    "name": "point",
+    "value": "nhc-align nc-indent hc-indent"
+  }
+]

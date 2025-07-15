@@ -1,0 +1,1774 @@
+@font-face {
+  font-family: Amita;
+  src: url("./fonts/Amita-Regular.ttf") format("opentype");
+}
+
+:root {
+  --background-margin: 5mm;
+  --page-border: solid black 1px;
+  --behind-page: rgb(221, 221, 221);
+  --debug: 0;
+  --hmargin: 22mm;
+  --vmargin: 25mm;
+  /* --hmargin: 12mm;
+  --vmargin: 15mm; */
+}
+
+@page {
+  size: A4;
+  margin-top: var(--vmargin);
+  margin-bottom: var(--vmargin);
+  margin-right: var(--hmargin);
+  margin-left: var(--hmargin);
+}
+
+@page {
+  @bottom-center {
+    padding-bottom: 10mm;
+    content: counter(page);
+  }
+}
+
+@media only screen {
+  body {
+    margin: 0;
+    background-color: var(--behind-page);
+    width: calc(var(--document-width) + 4em);
+  }
+
+  *[pattern="document"] {
+    box-sizing: border-box;
+    z-index: 5;
+    margin: var(--background-margin);
+    background-color: #fffffe;
+    border: var(--page-border);
+    width: var(--document-width);
+    padding-top: 0px;
+    padding-right: var(--document-margin-right);
+    padding-bottom: 0px;
+    padding-left: var(--document-margin-left);
+  }
+
+  .printMode *[name="attachments"] *[pattern="document"],
+  .printMode *[name="components"] *[pattern="document"] {
+    margin: 0 !important;
+    background-color: transparent;
+    border: transparent;
+    width: auto;
+    padding: 0px !important;
+  }
+
+  .alwaysOn *[name="attachments"] *[pattern="document"],
+  .alwaysOn *[name="components"] *[pattern="document"] {
+    box-sizing: border-box;
+    padding-top: var(--document-margin-top);
+    padding-bottom: var(--document-margin-bottom);
+  }
+
+  .alwaysOn *[name="attachments"] *[name="attachment"]:before,
+  .alwaysOn *[name="components"] *[name="component"]:before {
+    position: relative;
+    display: block !important;
+    height: var(--attachment-separator-height);
+    content: var(--attachment-separator-label) att("data-showas");
+    text-align: var(--attachment-separator-align);
+    font-size: var(--attachment-separator-fontsize);
+    color: var(--attachment-separator-color);
+    font-family: var(--attachment-separator-fontfamily);
+    margin-top: var(--attachment-separator-margin-top);
+    margin-bottom: var(--attachment-separator-margin-bottom);
+    padding-right: calc(100vw - var(--document-width) - var(--background-margin)) !important;
+  }
+
+  .alwaysOn *[name="attachments"] *[name="attachment"]:before {
+    content: "ATTACHMENT ";
+  }
+
+  .alwaysOn *[name="components"] *[name="component"]:before {
+    content: "COMPONENT ";
+  }
+
+
+}
+
+@media only print {
+  *[pattern="document"] {
+    box-sizing: border-box;
+    margin: 0;
+  }
+
+  :root {
+    --background-margin: 0;
+    --page-border: none;
+    --behind-page: transparent;
+  }
+}
+
+p {
+  margin: 0px;
+  padding: 0px;
+}
+
+*[pattern="document"] {}
+
+.hidden {
+  display: none !important;
+}
+
+/*
+*[pattern="docContainers"] {
+    box-sizing: border-box;
+    position: absolute !important; 
+    left: 0px; 
+}
+*/
+
+.alwaysOn *[pattern="block"] {
+  text-align: start;
+  font-size: 90%;
+}
+
+.alwaysOn *[pattern="docContainers"] {
+  box-sizing: border-box;
+  position: relative !important;
+  left: calc((var(--background-margin) + var(--document-margin-left)) * -1);
+  background-color: var(--behind-page);
+  width: 100vw;
+}
+
+.alwaysOn *[pattern="docContainers"]:first-of-type {
+  border-top: solid 1px black;
+  margin-top: var(--document-margin-top);
+}
+
+.alwaysOn *[pattern="docContainers"]:before {
+  content: "";
+  position: absolute;
+  left: 0 !important;
+  top: -1px !important;
+  height: 1px !important;
+  width: calc(2px + var(--background-margin)) !important;
+  border-top: 1px solid var(--behind-page) !important;
+}
+
+*[pattern="docContainers"]:after {
+  content: "";
+  position: absolute;
+  right: 0 !important;
+  top: -1px !important;
+  height: 1px !important;
+  width: calc(100vw - var(--document-width) - var(--background-margin)) !important;
+  border-top: 1px solid var(--behind-page);
+}
+
+*[name="attachments"] {
+  margin-top: var(--document-margin-bottom);
+}
+
+*[pattern="container"] {
+  margin: 0;
+  padding: 0;
+}
+
+*[pattern="hcontainer"] {
+  margin: 0;
+  padding: 0;
+}
+
+*[pattern="block"] {
+  margin: 0;
+  padding: 0;
+}
+
+*[pattern="listItem"] {
+  margin: 0em;
+  padding: 0;
+}
+
+*[pattern="inline"] {}
+
+*[pattern="marker"] {}
+
+*[pattern="subflow"] {}
+
+*[pattern="special"] {}
+
+*[pattern="html"] {}
+
+*[pattern="heading"] {
+  display: inline;
+  margin: 0;
+  padding: 0;
+}
+
+*[pattern="num"] {
+  display: inline;
+  margin: 0;
+  padding: 0;
+  height: fit-content !important;
+}
+
+*[pattern="unknown"] {
+  color: #d61c4e;
+  background-color: #fef9a7;
+  margin: 0;
+  padding: 0;
+}
+
+*[pattern="docContainer"]:has(> *[pattern="documentReference"]) {
+  position: relative !important;
+}
+
+/* ---------------------------------------------------*/
+/*                                                    */
+/*                ON HOVER LABELS                     */
+/*                                                    */
+/* ---------------------------------------------------*/
+@media only screen {
+  :root {
+
+    /* Da LIME */
+
+    --label1: rgb(149, 138, 80);
+    --label2: rgb(66, 61, 36);
+    --markupmenubutton1: rgb(26, 141, 230);
+    --markupmenubutton2: rgb(242, 248, 253);
+    --borders: rgb(51, 51, 51);
+    --label3: rgb(149, 80, 149);
+    --label4: rgb(149, 80, 115);
+    --label5: rgb(149, 80, 80);
+    --label6: rgb(149, 115, 80);
+    --label7: rgb(138, 149, 80);
+    --label8: rgb(115, 149, 80);
+    --label9: rgb(92, 149, 80);
+    --label10: rgb(80, 149, 92);
+    --label11: rgb(80, 149, 115);
+    --label12: rgb(80, 149, 138);
+    --label13: rgb(80, 138, 149);
+    --label14: rgb(80, 115, 149);
+    --label15: rgb(66, 36, 66);
+    --label16: rgb(66, 36, 51);
+    --label17: rgb(66, 36, 36);
+    --label18: rgb(66, 51, 36);
+    --texthilight: rgb(255, 252, 239);
+    --label19: rgb(71, 133, 82);
+    --border1: rgb(68, 68, 68);
+    --border2: rgb(85, 85, 85);
+    --label20: rgb(61, 66, 36);
+    --label21: rgb(51, 66, 36);
+    --label22: rgb(41, 66, 36);
+    --label23: rgb(36, 66, 41);
+    --label24: rgb(36, 66, 51);
+    --label25: rgb(36, 66, 61);
+    --label26: rgb(36, 61, 66);
+    --label27: rgb(36, 51, 66);
+    --background: rgb(245, 245, 245);
+    --border3: rgb(119, 119, 119);
+    --other1: rgb(205, 101, 103);
+    --textselectionhilight: rgb(176, 176, 176);
+    --other2: rgb(250, 252, 192);
+
+    /* Fine LIME */
+
+    --hidden-color: transparent;
+
+    --container-label: var(--label3);
+    --hcontainer-label: var(--label7);
+    --listItem-label: var(--label11);
+    --inline-label: var(--markupmenubutton1);
+    --block-label: var(--label9);
+    --subflow-label: var(--label6);
+    --br-label: var(--label9);
+    --unknown-label: var(--other1);
+    --foreign-label: var(--label7);
+    --inline-bgcolor: var(--markupmenubutton2);
+
+    --label-color: white;
+    --label-font-size: 8pt;
+    --label-font: helvetica;
+    --base-label-width: 10rem;
+    --label-width: var(--base-label-width);
+    --vertical-displacement: -1.1em;
+    --x: 0px;
+    --y: 0px;
+    --inline-vertical-displacement: -0.5em;
+    --box-spacing: 0.4rem;
+    --my-width: var(--label-width);
+
+  }
+
+  /* ---------------------------------------------------*/
+  /*                                                    */
+  /*               LABELS (COMMON PARTS)                */
+  /*                                                    */
+  /* ---------------------------------------------------*/
+
+  *[pattern="container"]:before,
+  *[pattern="hcontainer"]:before,
+  *[pattern="block"]:before,
+  *[pattern="listItem"]:before,
+  *[pattern="inline"]:before,
+  *[pattern="num"]:before,
+  *[pattern="heading"]:before,
+  *[pattern="subheading"]:before,
+  *[pattern="subflow"]:before,
+  *[pattern="unknown"]:before,
+  *[pattern="lineBreak"]:before {
+    display: none;
+    position: absolute;
+    content: attr(name);
+    max-width: var(--label-width);
+    text-align: center;
+    font-family: var(--label-font) !important;
+    font-size: var(--label-font-size) !important;
+    font-weight: normal !important;
+    font-style: normal !important;
+    color: var(--hidden-color);
+    background-color: var(--hidden-color);
+    border: solid 1px var(--hidden-color);
+    padding-left: 1em;
+    padding-right: 1em;
+    z-index: 20;
+    line-height: 1;
+  }
+
+
+  *[name="mod"] {
+    display: inline-block !important;
+    margin-top: 1em !important;
+    border-left: solid 2px var(--inline-label) !important;
+    border-bottom: 0 !important;
+  }
+
+  *[name="mod"][mod-type]:before {
+    content: attr(mod-type);
+    top: -0.5em !important;
+  }
+
+  *[name="eol"] br {
+    display: none;
+  }
+
+  *[name="crossHeading"]:before,
+  *[name="embeddedText"]:before,
+  *[name="blockContainer"]:before,
+  *[name="listIntroduction"]:before,
+  *[name="listWrapUp"]:before,
+  *[name="embeddedStructure"]:before,
+  *[name="quotedText"]:before,
+  *[name="quotedStructure"]:before,
+  *[name="collectionBody"]:before,
+  *[name="affectedDocument"]:before {
+    --label-width: fit-content !important;
+  }
+
+  .wrapper:before {
+    display: none !important;
+    position: absolute;
+    left: 0px;
+  }
+
+  *[pattern="container"],
+  *[pattern="hcontainer"],
+  *[pattern="block"],
+  *[pattern="listItem"],
+  *[pattern="num"],
+  *[pattern="heading"],
+  *[pattern="subheading"],
+  *[pattern="unknown"],
+  *[pattern="subflow"] {
+    position: relative;
+    background-color: var(--hidden-color);
+    border: solid 1px var(--hidden-color);
+  }
+
+  *[pattern="inline"] {
+    position: static;
+    background-color: var(--hidden-color);
+    border: solid 1px var(--hidden-color);
+  }
+
+  *[pattern="listItem"] {
+    display: list-item;
+    list-style-position: outside;
+    margin-left: 1em;
+  }
+
+  *[pattern='listItem']:has(*[pattern='num']) {
+    margin-left: inherit !important;
+  }
+
+  *[pattern="unknown"]:before {
+    position: relative !important;
+    content: "unknown: " attr(name);
+    --label-width: calc(1 * var(--base-label-width));
+  }
+
+  *[name="foreign"] *[pattern="unknown"]:before,
+  *[name="foreignText"] *[pattern="unknown"]:before {
+    position: relative !important;
+    content: attr(name);
+    --label-width: calc(1 * var(--base-label-width));
+  }
+
+  /*      SHOW LINE BREAKS                     */
+  .showLineBreaks *[name="br"] span:before {
+    content: "¶" !important;
+    position: relative !important;
+  }
+
+  .showLineBreaks *[name="eol"] span:before {
+    content: "[¶]" !important;
+    position: relative !important;
+    font-style: italic;
+    color: blue;
+    font-size: 70%;
+  }
+
+  .printMode.showPageBreaks .generated.pagebreak {
+    display: block;
+  }
+
+
+
+  /* ---------------------------------------------------*/
+  /*                                                    */
+  /*               LABELS ON HOVER                      */
+  /*                                                    */
+  /* ---------------------------------------------------*/
+
+  :root {
+    --label-width: 6em;
+    --label-displacement: -0.8em;
+  }
+
+  /*                LABEL                     */
+  .onHover *:before {
+    display: block !important;
+    position: absolute;
+    top: var(--label-displacement);
+    left: calc(var(--x) - 1px);
+  }
+
+  /*                CONTAINERS                     */
+  .debug.onHover *[pattern="container"]:before,
+  .onHover *[pattern="container"]:hover:before {
+    color: var(--label-color);
+    background-color: var(--container-label);
+    border: solid 1px var(--container-label);
+  }
+
+  .debug.onHover *[pattern="container"],
+  .onHover *[pattern="container"]:hover {
+    border: solid 1px var(--container-label);
+  }
+
+  /*                HCONTAINERS                     */
+  .debug.onHover *[pattern="hcontainer"]:before,
+  .onHover *[pattern="hcontainer"]:hover:before {
+    color: var(--label-color);
+    background-color: var(--hcontainer-label);
+    border: solid 1px var(--hcontainer-label);
+  }
+
+  .debug.onHover *[pattern="hcontainer"],
+  .onHover *[pattern="hcontainer"]:hover {
+    border: solid 1px var(--hcontainer-label);
+  }
+
+  /*                LIST ITEMS                      */
+  /*       (identical to hecontainers)              */
+  .debug.onHover *[pattern="listItem"]:before,
+  .onHover *[pattern="listItem"]:hover:before {
+    color: var(--label-color);
+    background-color: var(--listItem-label);
+    border: solid 1px var(--listItem-label);
+  }
+
+  .debug.onHover *[pattern="listItem"],
+  .onHover *[pattern="listItem"]:hover {
+    border: solid 1px var(--listItem-label);
+  }
+
+  /*                INLINE                     */
+  /*  .debug.onHover *[pattern="inline"]:before , */
+  .onHover *[pattern="inline"]:hover:before {
+    color: var(--label-color);
+    background-color: var(--inline-label);
+    border: solid 1px var(--inline-label);
+  }
+
+  .debug.onHover *[pattern="inline"],
+  .onHover *[pattern="inline"]:hover {
+    border: solid 1px var(--hidden-color);
+    border-bottom-color: var(--inline-label);
+  }
+
+  .debug.onHover *>*[pattern="inline"],
+  .onHover *:hover>*[pattern="inline"] {
+    border-bottom-color: var(--inline-label);
+  }
+
+  /*                BLOCKS                     */
+  .debug.onHover *[pattern="block"]:before,
+  .onHover *[pattern="block"]:hover:before {
+    color: var(--label-color);
+    background-color: var(--block-label);
+    border: solid 1px var(--block-label);
+  }
+
+  .debug.onHover *[pattern="block"],
+  .onHover *[pattern="block"]:hover {
+    border: solid 1px var(--block-label);
+  }
+
+  .onHover *[name="p"]:before,
+  .onHover *[name="block"]:before {
+    top: 0.5em;
+    left: -3em;
+  }
+
+  .debug.onHover *[name="body"]:before,
+  .onHover *[name="body"]:hover:before,
+  .debug.onHover *[name="p"]:before,
+  .onHover *[name="p"]:hover:before,
+  .debug.onHover *[name="block"]:before,
+  .onHover *[name="block"]:hover:before {
+    color: var(--hidden-color);
+    background-color: var(--hidden-color);
+    border: solid 1px var(--hidden-color);
+  }
+
+  .debug.onHover *[name="body"],
+  .onHover *[name="body"]:hover,
+  .debug.onHover *[name="p"],
+  .onHover *[name="p"]:hover,
+  .debug.onHover *[name="block"],
+  .onHover *[name="block"]:hover {
+    border: solid 1px var(--hidden-color);
+  }
+
+  .debug.onHover.allElements *[name="body"]:before,
+  .onHover.allElements *[name="body"]:hover:before,
+  .debug.onHover.allElements *[name="p"]:before,
+  .onHover.allElements *[name="p"]:hover:before,
+  .debug.onHover.allElements *[name="block"]:before,
+  .onHover.allElements *[name="block"]:hover:before {
+    color: var(--label-color);
+    background-color: var(--block-label);
+    border: solid 1px var(--block-label);
+  }
+
+  .debug.onHover.allElements *[name="body"],
+  .onHover.allElements *[name="body"]:hover,
+  .debug.onHover.allElements *[name="p"],
+  .onHover.allElements *[name="p"]:hover,
+  .debug.onHover.allElements *[name="block"],
+  .onHover.allElements *[name="block"]:hover {
+    border: solid 1px var(--block-label);
+  }
+
+  /*                SUBFLOW                     */
+  .debug.onHover *[pattern="subflow"]:before,
+  .onHover *[pattern="subflow"]:hover:before {
+    color: var(--label-color);
+    background-color: var(--subflow-label);
+    border: solid 1px var(--subflow-label);
+  }
+
+  .debug.onHover *[pattern="subflow"],
+  .onHover *[pattern="subflow"]:hover {
+    border: solid 1px var(--subflow-label);
+  }
+
+  /*                NUM + HEADING                     */
+  .debug.onHover *[pattern="heading"]:before,
+  .debug.onHover *[pattern="subheading"]:before,
+  .debug.onHover *[pattern="num"]:before,
+  .onHover *[pattern="heading"]:hover:before,
+  .onHover *[pattern="subheading"]:hover:before,
+  .onHover *[pattern="num"]:hover:before {
+    color: var(--label-color);
+    background-color: var(--block-label);
+    border: solid 1px var(--block-label);
+    top: calc(-1px + var(--label-displacement));
+  }
+
+  .debug.onHover *[pattern="heading"],
+  .onHover *[pattern="heading"]:hover,
+  .debug.onHover *[pattern="subheading"],
+  .debug.onHover *[pattern="subheading"],
+  .onHover *[pattern="subheading"]:hover,
+  .debug.onHover *[pattern="num"],
+  .onHover *[pattern="num"]:hover {
+    border: solid 1px var(--block-label);
+  }
+
+  .onHover *[pattern="num"]:before {
+    /*	left: calc(1px + var(--label-width));  */
+  }
+
+  .onHover *[name="tblock"] *[pattern="heading"]:before,
+  .onHover *[name="blockContainer"] *[pattern="heading"]:before {
+    /*	left: calc(1px + var(--label-width)); */
+  }
+
+  .onHover .layout-nhc.nhc-valign *[pattern="num"]:before,
+  .onHover .layout-nc.nc-valign *[pattern="num"]:before {}
+
+  .onHover .layout-hc.hc-stacked *[pattern="heading"]:before,
+  .onHover .layout-hc.hc-align *[pattern="heading"]:before,
+  .onHover .layout-hc.hc-indent *[pattern="heading"]:before,
+  .onHover .layout-hc.hc-bullet-align *[pattern="heading"]:before,
+  .onHover .layout-hc.hc-bullet-indent *[pattern="heading"]:before {
+    /*	left: calc(1px + var(--label-width)); */
+  }
+
+  .onHover *[name="blockList"] *:first-child:before,
+  .onHover .layout-c *[pattern="hcontainer"]:first-of-type:before {
+    /*	left: calc(1px + 1 * var(--label-width)); */
+  }
+
+  .onHover .layout-c *[pattern="hcontainer"]:first-of-type *[pattern="num"]:before {
+    /*	left: calc(1px + 2 * var(--label-width)); */
+  }
+
+  /*                EOL + BR + EOP                     */
+  /*  .debug.onHover *[pattern="lineBreak"]:before , */
+  .onHover *[pattern="lineBreak"]:hover:before {
+    color: var(--br-label-color);
+    background-color: var(--br-label-bgcolor);
+    border: solid 1px var(--br-label-bordercolor);
+  }
+
+  .debug.onHover *>*[pattern="lineBreak"],
+  .onHover *:hover>*[pattern="lineBreak"] {
+    border-bottom-color: var(--br-label);
+    width: 1em;
+  }
+
+  .onHover *[pattern="lineBreak"] span:before {
+    content: "" !important;
+    display: inline !important;
+  }
+
+  /*                UNKNOWN                     */
+  .debug.onHover *[pattern="unknown"]:before,
+  .onHover *[pattern="unknown"]:hover:before {
+    color: var(--label-color);
+    background-color: var(--unknown-label);
+    border: solid 1px var(--unknown-label);
+  }
+
+  .debug.onHover *[pattern="unknown"],
+  .onHover *[pattern="unknown"]:hover {
+    border: solid 1px var(--unknown-label);
+  }
+
+  /*                FOREIGN                     */
+  .debug.onHover *[name="foreignText"] *[pattern="unknown"]:before,
+  .onHover *[name="foreignText"] *[pattern="unknown"]:before,
+  .debug.onHover *[name="foreign"] *[pattern="unknown"]:before,
+  .onHover *[name="foreign"] *[pattern="unknown"]:before {
+    display: none !important;
+  }
+
+
+  .debug.onHover *[pattern="container"],
+  .onHover *[pattern="container"]:hover,
+  .debug.onHover *[pattern="hcontainer"],
+  .onHover *[pattern="hcontainer"]:hover,
+  .debug.onHover *[pattern="listitem"],
+  .onHover *[pattern="listitem"]:hover,
+  .debug.onHover *[pattern="subflow"],
+  .onHover *[pattern="subflow"]:hover,
+  .debug.onHover *[pattern="block"],
+  .onHover *[pattern="block"]:hover {
+    --y: var(--x);
+  }
+
+  .akn-subflow>*:not(.generated):first-of-type,
+  .layout-nhc>*:not(.generated):first-of-type,
+  .layout-nc>*:not(.generated):first-of-type,
+  .layout-hc>*:not(.generated):first-of-type {
+    --x: calc(var(--y) + var(--label-width)) !important;
+  }
+
+  .akn-subflow>*:not(.generated),
+  .layout-nhc>*:not(.generated),
+  .layout-nc>*:not(.generated),
+  .layout-hc>*:not(.generated) {
+    --y: 0px;
+  }
+
+  /* ---------------------------------------------------*/
+  /*                                                    */
+  /*               LABELS ALWAYS ON                     */
+  /*                                                    */
+  /* ---------------------------------------------------*/
+
+  /* LABELS   */
+  .alwaysOn *:before {
+    display: inline !important;
+    position: absolute;
+    top: 0px;
+    line-height: inherit;
+    left: -2px;
+    border-radius: 0px 6px 0px 0px;
+    padding-top: 0.2em;
+    padding-bottom: 0.2em;
+  }
+
+  /*                CONTAINERS                     */
+  .alwaysOn *[pattern="container"]:before {
+    color: var(--label-color);
+    background-color: var(--container-label);
+    border-left: solid 2px var(--container-label);
+    top: -1.5em;
+  }
+
+  .alwaysOn *[pattern="container"] {
+    border-left: solid 2px var(--container-label);
+    margin: 0.2em;
+    margin-top: 2em;
+    padding-left: 0.1em;
+    padding-top: 0.3em;
+  }
+
+  /*                HCONTAINERS                     */
+  .alwaysOn *[pattern="hcontainer"]:before {
+    color: var(--label-color);
+    background-color: var(--hcontainer-label);
+    border-left: solid 2px var(--hcontainer-label);
+    top: -1.5em;
+  }
+
+  .alwaysOn *[pattern="hcontainer"] {
+    border-left: solid 2px var(--hcontainer-label);
+    margin: 0.2em;
+    margin-top: 2em;
+    padding-left: 0.1em;
+    padding-top: 0.3em;
+  }
+
+  /*                LIST ITEMS                      */
+  .alwaysOn *[pattern="listItem"]:before {
+    color: var(--label-color);
+    background-color: var(--listItem-label);
+    border-left: solid 2px var(--listItem-label);
+    top: -1.5em;
+  }
+
+  .alwaysOn *[pattern="listItem"] {
+    border-left: solid 2px var(--listItem-label);
+    margin: 0.2em;
+    margin-top: 2em;
+    margin-left: 1em;
+    padding-left: 0.1em;
+    padding-top: 0.3em;
+  }
+
+  /*                INLINE                     */
+  .alwaysOn *[pattern="inline"]:before,
+  .alwaysOn *[pattern="link"]:before {
+    position: relative;
+    top: 1px;
+    color: var(--label-color);
+    text-decoration: none !important;
+    background-color: var(--inline-label);
+    border-radius: 0px 6px 0px 6px;
+  }
+
+  .alwaysOn *[pattern="inline"],
+  .alwaysOn *[pattern="link"] {
+    border-bottom: solid 2px var(--inline-label);
+    background-color: var(--inline-bgcolor);
+  }
+
+  /*                BLOCKS                     */
+
+
+  .alwaysOn *[pattern="block"]:before {
+    color: var(--label-color);
+    background-color: var(--block-label);
+    border: solid 2px var(--block-label);
+    top: -1.5em;
+  }
+
+  .alwaysOn *[pattern="block"] {
+    border-left: solid 2px var(--hcontainer-label);
+    margin: 0.2em;
+    margin-top: 2em;
+    padding-left: 0.1em;
+    padding-top: 0.3em;
+  }
+
+  .alwaysOn *[name="p"]:before,
+  .alwaysOn *[name="block"]:before {
+    color: var(--hidden-color);
+    background-color: var(--hidden-color);
+    border: solid 2px var(--hidden-color);
+    top: -1.5em;
+  }
+
+  .alwaysOn *[name="p"],
+  .alwaysOn *[name="block"] {
+    border-left: solid 2px var(--hidden-color);
+    margin: 0px !important;
+    padding: 0px !important;
+  }
+
+  /*                SUBFLOW                     */
+  .alwaysOn *[pattern="subflow"]:before {
+    color: var(--label-color);
+    background-color: var(--subflow-label);
+    border: solid 1px var(--subflow-label);
+    top: -1.5em;
+  }
+
+  .alwaysOn *[pattern="subflow"] {
+    box-shadow: 0px 0px 18px gray;
+    margin: 0.6em;
+    margin-top: 1.5em;
+  }
+
+  /*                NUM + HEADING                     */
+
+  .alwaysOn *[pattern="heading"]:before,
+  .alwaysOn *[pattern="num"]:before {
+    color: var(--hidden-color);
+    background-color: var(--hidden-color);
+    border: solid 1px var(--hidden-color);
+  }
+
+  .alwaysOn *[pattern="heading"],
+  .alwaysOn *[pattern="num"] {
+    color: var(--block-color);
+    background-color: var(--hidden-color);
+    border: solid 1px var(--hidden-color);
+  }
+
+  /*                EOL + BR + EOP                     */
+  .alwaysOn .showLineBreaks *[pattern="lineBreak"]:before {
+    color: var(--label-color);
+    background-color: color(from green srgb r g b / 0.3);
+    color: black;
+    border: solid 1px var(--br-label);
+
+    position: relative;
+  }
+
+  /*                UNKNOWN                     */
+  .alwaysOn *[pattern="unknown"]:before {
+    color: var(--label-color);
+    background-color: var(--unknown-label);
+    border-left: solid 2px var(--unknown-label);
+    top: -1.5em;
+    left: -4px;
+  }
+
+  .alwaysOn *[pattern="unknown"] {
+    border-left: solid 2px var(--unknown-label);
+    margin: 0.2em;
+    margin-top: 2em;
+    padding-left: 0.1em;
+    padding-top: 0.3em;
+  }
+
+  /*                FOREIGN                     */
+  .alwaysOn *[name="foreignText"] *[pattern="unknown"]:before,
+  .alwaysOn *[name="foreign"] *[pattern="unknown"]:before {
+    display: none !important;
+    color: var(--label-color);
+    background-color: var(--foreign-label);
+    border-left: solid 2px var(--foreign-label);
+    top: -1.5em;
+    left: -4px;
+  }
+
+  .alwaysOn *[name="foreignText"] *[pattern="unknown"],
+  .alwaysOn *[name="foreign"] *[pattern="unknown"] {
+    border-left: solid 2px var(--foreign-label);
+    margin: 0.2em;
+    margin-top: 2em;
+    padding-left: 0.1em;
+    padding-top: 0.3em;
+  }
+
+
+}
+
+
+:root {
+  --multiplier: 0;
+  --remaining: 0px;
+}
+
+.eop {
+  box-sizing: border-box;
+  display: block;
+  position: relative;
+  height: calc(var(--multiplier) * (var(--document-margin-bottom) + var(--background-margin) + var(--document-margin-top) + var(--remaining) + var(--footnoteHeight))) !important;
+  outline: solid 1px rgba(255, 0, 0, calc(3 * var(--debug)));
+}
+
+.eop.pb-ignore {
+  display: none;
+}
+
+.eop.pb-initial {
+  height: calc(var(--multiplier) * (var(--document-margin-top))) !important;
+}
+
+.eop.pb-final {
+  height: calc(var(--multiplier) * (var(--document-margin-bottom) + var(--remaining))) !important;
+}
+
+/* 
+	.eop.pb-noRemaining {
+		height: calc( var(--multiplier) * (
+			var(--document-margin-bottom) + 
+			var(--background-margin) + 
+			var(--document-margin-top)
+		)) !important ;	}
+ */
+
+.eop.pb-noRemaining.pb-final {
+  height: calc(var(--multiplier) * (var(--document-margin-bottom))) !important;
+}
+
+.eop.pb-noRemaining.pb-initial {
+  height: calc(var(--multiplier) * (var(--document-margin-top))) !important;
+}
+
+
+.printMode .pb-wrapper {
+  position: relative;
+  height: calc(var(--document-height) - (var(--document-margin-top) + var(--document-margin-bottom))) !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.canvas {
+  padding: 0;
+}
+
+.forced.pagebreak {}
+
+.printMode .pagebreakContainer {
+  display: block;
+  position: absolute;
+  top: 0px;
+  height: 2px;
+}
+
+.printMode .pagebreak {
+  box-sizing: border-box;
+  text-indent: 0px;
+  border: none;
+  float: none;
+  display: block;
+  overflow: visible;
+  position: absolute;
+  width: calc(1px + var(--document-width));
+  left: var(--background-margin);
+  /*		outline: solid 2px rgba(0, 0,255, calc(3 *  var(--debug)));  */
+}
+
+.printMode .fakePage {
+  box-sizing: border-box;
+  display: block;
+  overflow: visible;
+  position: absolute;
+  width: 50px;
+  left: calc(var(--document-width) + 30px);
+  top: var(--topfakePage);
+  height: calc(var(--document-height));
+  border-top: solid 1px rgba(0, 0, 0, calc(3 * var(--debug)));
+  border-right: solid 1px rgba(0, 0, 0, calc(3 * var(--debug)));
+  border-bottom: solid 1px rgba(0, 0, 0, calc(3 * var(--debug)));
+  background-color: rgba(255, 255, 0, calc(1 * var(--debug)));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  font-size: 200%;
+  color: rgba(0, 0, 0, calc(1 * var(--debug)));
+}
+
+.printMode .remaining {
+  box-sizing: border-box;
+  background-color: rgba(255, 255, 0, var(--debug));
+  display: block;
+  position: relative;
+  height: calc(var(--remainingHeight));
+}
+
+.printMode .footNoteArea {
+  padding-top: var(--footnote-distance-from-text);
+  box-sizing: border-box;
+  background-color: rgba(255, 0, 0, var(--debug));
+  display: block;
+  padding-left: var(--document-margin-left);
+  padding-right: var(--document-margin-right);
+  height: calc(var(--footnote-distance-from-text) + var(--footnoteHeight)) !important;
+}
+
+.printMode .bottomPreviousPage {
+  box-sizing: border-box;
+  background-color: rgba(0, 255, 0, var(--debug));
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  text-align: center;
+  position: relative;
+  height: calc(var(--document-margin-bottom) - var(--footnote-distance-from-text));
+  min-height: calc(var(--document-margin-bottom) - var(--footnote-distance-from-text));
+  max-height: calc(var(--document-margin-bottom) - var(--footnote-distance-from-text));
+}
+
+.footer,
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.footer .left,
+.header .left {
+  margin-left: var(--document-margin-left);
+}
+
+.footer .right,
+.header .right {
+  margin-right: var(--document-margin-right);
+}
+
+.printMode .actualBreak {
+  box-sizing: border-box;
+  background-color: var(--behind-page);
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  border-left: var(--behind-page);
+  border-right: var(--behind-page);
+  display: block;
+  text-align: center;
+  position: relative;
+  height: var(--background-margin);
+  width: calc(2px+ var(--document-width));
+  left: -1px;
+}
+
+.printMode .topNextPage {
+  box-sizing: border-box;
+  background-color: rgba(0, 0, 255, var(--debug));
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  text-align: center;
+  position: relative;
+  height: var(--document-margin-top);
+  min-height: var(--document-margin-top);
+  max-height: var(--document-margin-top);
+}
+
+.printMode *[pattern="documentReference"] {
+  display: none;
+}
+
+
+.alwaysOn *[pattern="documentReference"] {
+  padding: 2em;
+  display: block;
+  border: solid 1px gray;
+  margin: 0.5em;
+  font-family: helvetica;
+}
+
+.alwaysOn .pb-wrapper {
+  position: relative;
+  height: 15em !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.alwaysOn.showPageBreaks .eop:after {
+  content: "pag. " attr(data-pagenum);
+  display: block;
+  width: 115%;
+  border-top: solid 1px red;
+  font-family: arial;
+  font-size: 70%;
+  top: -0.5em;
+  position: relative;
+  text-align: right;
+}
+
+.alwaysOn .eop {
+  display: inline-block;
+  height: 0px !important;
+  /* outline: solid 1px red; */
+  width: 100%;
+}
+
+.alwaysOn .eop.pb-ignore {
+  display: none !important;
+}
+
+.alwaysOn .eop.pb-final {
+  display: none !important;
+}
+
+.printMode .pb-wrapper .pb-fullpage {
+  position: relative;
+  height: calc(var(--document-height) - (var(--document-margin-top) + var(--document-margin-bottom))) !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.alwaysOn .pagebreakContainer {
+  display: none;
+  position: absolute;
+  top: 0px;
+  height: 2px;
+}
+
+
+.pagebreak.pb-ignore {
+  display: none;
+}
+
+.pagebreak.pb-initial {
+  margin-top: 0px;
+}
+
+.pagebreak.pb-initial .actualBreak {
+  display: none;
+  height: 0px;
+}
+
+.pagebreak.pb-initial .bottomPreviousPage {
+  display: none;
+  height: 0px;
+}
+
+.pagebreak.pb-initial .footNoteArea {
+  display: none;
+  height: 0px;
+}
+
+.pagebreak.pb-final {
+  margin-bottom: 0px;
+}
+
+.pagebreak.pb-final .actualBreak {
+  display: none;
+  border-bottom: none;
+  height: calc(1 * var(--background-margin));
+}
+
+.pagebreak.pb-final .topNextPage {
+  display: none;
+  height: 0px;
+}
+
+.footnote {
+  display: block;
+}
+
+.footnote>* {
+  display: inline;
+}
+
+.printMode .ghosted {
+  display: none;
+}
+
+.alwaysOn .footnote.ghosted {
+  display: flex;
+  position: relative;
+  right: calc(-1* var(--document-margin-right));
+  justify-content: flex-end;
+  text-indent: 0px;
+}
+
+@media only print {
+
+  :root {
+    --background-margin: 0;
+    --page-border: none;
+    --behind-page: transparent;
+  }
+
+  .actualBreak {
+    height: 0px;
+    page-break-after: always;
+    border: none !important;
+  }
+}
+
+
+/* ---------------------------------------------------*/
+/*                                                    */
+/*                FULL VIEW LABELS                     */
+/*                                                    */
+/* ---------------------------------------------------*/
+@media only screen {
+  .fullView *[pattern] {
+    display: revert !important;
+    position: revert !important;
+    text-indent: revert !important;
+    margin: revert !important;
+    padding: revert !important;
+    text-align: start !important;
+  }
+
+  .fullView *[pattern]:before {
+    --tag: "<" attr(name) ' id="' attr(id) '">';
+    content: var(--tag) !important;
+    display: revert !important;
+    position: revert !important;
+    text-indent: revert !important;
+    color: var(--darker-blue) !important;
+    font-family: var(--label-font);
+    font-size: var(--label-font-size);
+    padding: 0px;
+  }
+
+  .fullView *[pattern]:after {
+    --tag: "</" attr(name) ">";
+    content: var(--tag);
+    display: revert !important;
+    position: revert !important;
+    color: var(--darker-blue) !important;
+    font-family: var(--label-font);
+    font-size: var(--label-font-size);
+    padding: 0px;
+  }
+
+  .fullView *[pattern="marker"]:after,
+  .fullView *[pattern="lineBreak"]:after {
+    --tag: "" !important;
+  }
+
+  .fullView .pagebreak {
+    display: none;
+  }
+
+  .fullView .pagebreak:before {
+    display: none;
+  }
+
+  .fullView .pagebreak:after {
+    display: none;
+  }
+
+  .fullView.pageShadows {
+    display: none !important;
+  }
+}
+
+/* ---------------------------------------------------*/
+/*                                                    */
+/*                   OTHER RULES                      */
+/*                                                    */
+/* ---------------------------------------------------*/
+
+::-webkit-scrollbar {
+  width: 0.5em;
+  height: 0.5em;
+}
+
+::-webkit-scrollbar-track {
+  background-color: rgb(227 227 227);
+  border-radius: 100vw;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(120, 120, 120, 0.5);
+  border-radius: 100vw;
+}
+
+@supports (scrollbar-color: rgba(192, 192, 192, 0.5) rgb(227 227 227)) {
+  * {
+    scrollbar-color: rgba(196, 195, 248, 0.5) rgb(247 248 255);
+    scrollbar-width: thin;
+  }
+}
+
+.documentError {
+  position: relative;
+  color: rgb(230, 0, 0) !important;
+}
+
+.hideBreaks .pageShadow {
+  top: calc(5px + var(--background-margin) + var(--pos) * var(--document-height)) !important;
+}
+
+.hideBreaks .pagebreak {
+  display: none !important;
+}
+
+.hideBreaks .pagebreak:before {
+  display: none !important;
+}
+
+.hideBreaks .pagebreak:after {
+  display: none !important;
+}
+
+.showRight {
+  background-color: lightgray;
+  font-style: italic;
+  font-size: small;
+}
+
+/* ---------------------------------------------------*/
+/*                                                    */
+/*     LAYOUT                                         */
+/*                                                    */
+/* ---------------------------------------------------*/
+
+
+*[name='num'] {
+  grid-area: num;
+  display: block;
+}
+
+*[name='heading'] {
+  grid-area: heading;
+  display: block;
+}
+
+*[name='subheading'] {
+  grid-area: subheading;
+  display: block;
+}
+
+.wrapper {
+  grid-area: content;
+  display: block;
+}
+
+.eop {
+  grid-area: eop;
+}
+
+
+/* ---------------------------------------------------*/
+/*                                                    */
+/*     HCONTAINERS NUM + HEADING + CONTENT (nhc)      */
+/*                                                    */
+/* ---------------------------------------------------*/
+
+:root {
+  --separation: 1em;
+  --indent: auto;
+  --min-indent: 2em;
+}
+
+.layout-nhc.nhc-stacked {
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+  grid-template-areas:
+    "num num"
+    "heading heading"
+    "content content"
+    "eop eop"
+}
+
+.layout-nhc.nhc-stacked>*[name='num'] {
+  width: 100%;
+  text-align: center;
+}
+
+.layout-nhc.nhc-stacked>*[name='heading'] {
+  width: 100%;
+  text-align: center
+}
+
+.layout-nhc.nhc-stacked>.wrapper {
+  width: 100%;
+}
+
+
+.layout-nhc {
+  display: grid;
+  grid-template-columns: minmax(var(--min-indent), var(--indent)) 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "num heading"
+    "content content"
+    "eop eop";
+}
+
+.layout-nhc.nhc-align {
+  display: grid;
+  grid-template-columns: minmax(var(--min-indent), var(--indent)) 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "num heading"
+    "content content"
+    "eop eop";
+}
+
+.layout-nhc.nhc-align>*[name='num'] {
+  padding-right: var(--separation);
+}
+
+.layout-nhc.nhc-indent {
+  display: grid;
+  grid-template-columns: minmax(var(--min-indent), var(--indent)) 1fr;
+  grid-template-rows: min-content min-content min-content;
+  grid-template-areas:
+    "num heading"
+    "num content"
+    "eop eop";
+}
+
+.layout-nhc.nhc-indent>*[name='num'] {
+  place-self: start;
+  padding-right: var(--separation);
+}
+
+.layout-nhc.nhc-valign {
+  display: grid;
+  grid-template-columns: minmax(var(--min-indent), var(--indent)) 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "num heading"
+    "num content"
+    "eop eop"
+}
+
+.layout-nhc.nhc-valign>*[name='num'] {
+  place-self: center;
+  padding-right: var(--separation);
+}
+
+/* ---------------------------------------------------*/
+/*                                                    */
+/*     HCONTAINERS NUM + CONTENT (nc)                 */
+/*                                                    */
+/* ---------------------------------------------------*/
+
+.layout-nc.nc-stacked {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "num num"
+    "content content"
+    "eop eop"
+}
+
+.layout-nc.nc-stacked>*[name='num'] {
+  width: 100%;
+  text-align: center;
+}
+
+.layout-nc.nc-stacked>.wrapper {
+  width: 100%;
+}
+
+.layout-nc,
+.layout-nc.nc-align {
+  display: block;
+}
+
+.layout-nc.nc-align>*[name='num'] {
+  display: inline !important;
+  padding-right: 0.5em;
+}
+
+.layout-nc.nc-align>.wrapper {
+  display: inline !important;
+}
+
+.layout-nc.nc-align>.wrapper>*[name="intro"] {
+  display: inline !important;
+}
+
+.layout-nc.nc-align *[pattern='content'] {
+  display: inline !important;
+}
+
+.layout-nc.nc-align *[pattern='block']:first-of-type {
+  display: inline !important;
+}
+
+*[pattern='listItem']:has(*[pattern='num']),
+.layout-nc.nc-indent {
+  display: grid !important;
+  grid-template-columns: minmax(var(--min-indent), var(--indent)) 1fr;
+  grid-template-rows: 1fr auto;
+  grid-template-areas:
+    "num content"
+    "eop eop"
+}
+
+.layout-nc>*[name='num'],
+.layout-nc.nc-indent>*[name='num'] {
+  place-self: start;
+  padding-right: 1em;
+}
+
+.layout-nc.nc-valign {
+  display: grid;
+  grid-template-columns: minmax(var(--min-indent), var(--indent)) 1fr;
+  grid-template-rows: 1fr auto;
+  grid-template-areas:
+    "num content"
+    "eop eop"
+}
+
+.layout-nc.nc-valign>*[name='num'] {
+  place-self: center;
+  padding-right: 1em;
+}
+
+
+/* ---------------------------------------------------*/
+/*                                                    */
+/*     HCONTAINERS HEADING + CONTENT (hc)             */
+/*                                                    */
+/* ---------------------------------------------------*/
+
+.layout-hc.hc-stacked {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "heading heading"
+    "content content"
+    "eop eop"
+}
+
+.layout-hc.hc-stacked>*[name='heading'] {
+  width: 100%;
+  text-align: center;
+}
+
+.layout-hc.hc-stacked>.wrapper {
+  width: 100%;
+}
+
+.layout-hc,
+.layout-hc.hc-align {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "heading"
+    "content"
+    "eop"
+}
+
+.layout-hc.hc-indent {
+  display: grid;
+  grid-template-columns: minmax(var(--min-indent), var(--indent)) 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "heading heading"
+    "empty content"
+    "eop eop"
+}
+
+.layout-hc.hc-valign {
+  display: grid;
+  grid-template-columns: minmax(var(--min-indent), var(--indent)) 1fr;
+  grid-template-rows: 1fr auto;
+  grid-template-areas:
+    "heading content"
+    "eop eop"
+}
+
+.layout-hc.hc-valign>*[name='heading'] {
+  place-self: center;
+  padding-right: 1em;
+}
+
+.layout-hc.hc-bullet-indent {
+  display: grid;
+  grid-template-columns: minmax(var(--min-indent), var(--indent)) 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "heading heading"
+    "empty content"
+    "eop eop"
+}
+
+.layout-hc.hc-bullet-align {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "heading"
+    "content"
+    "eop"
+}
+
+.layout-hc.hc-bullet-align>*[name='heading'] {
+  display: list-item;
+  list-style: disc;
+  list-style-position: outside;
+  padding-left: calc(var(--min-indent) / 2 - 0.5em);
+  margin-left: calc(0.5em + var(--min-indent) / 2);
+}
+
+.layout-hc.hc-bullet-indent>*[name='heading'] {
+  display: list-item;
+  list-style: disc;
+  list-style-position: outside;
+  padding-left: calc(var(--min-indent) / 2 - 0.5em);
+  margin-left: calc(0.5em + var(--min-indent) / 2);
+}
+
+
+/* ---------------------------------------------------*/
+/*                                                    */
+/*     HCONTAINERS CONTENT (c)                        */
+/*                                                    */
+/* ---------------------------------------------------*/
+
+
+.layout-c,
+.layout-c.c-align {
+  display: block;
+}
+
+.layout-c.c-indent {
+  display: grid;
+  grid-template-columns: 2em 1fr;
+  grid-template-rows: 1fr auto;
+  grid-template-areas:
+    "empty content"
+    "eop eop"
+}
+
+.layout-c.c-bullet-align {
+  display: list-item;
+  list-style: disc;
+  list-style-position: inside;
+}
+
+.layout-c.c-bullet-align>.wrapper {
+  display: inline !important;
+}
+
+.layout-c.c-bullet-align *[pattern='content'] {
+  display: inline !important;
+}
+
+.layout-c.c-bullet-align *[pattern='block']:first-of-type {
+  display: inline !important;
+}
+
+.layout-c.c-bullet-indent {
+  display: list-item;
+  list-style: disc;
+  list-style-position: outside;
+  position: relative;
+  left: 2em;
+  width: calc(100% - 2em);
+}
+
+/* ---------------------------------------------------*/
+/*                                                    */
+/*     HCONTAINERS CON SUBHEADING (nhsc)              */
+/*                                                    */
+/* ---------------------------------------------------*/
+
+.layout-nhsc.nhsc-align-left {
+  display: grid;
+  grid-template-columns: minmax(var(--min-indent), var(--indent)) auto 1fr;
+  grid-template-areas:
+    "empty num heading"
+    "subheading content content"
+    "eop eop eop"
+}
+
+.layout-nhsc.nhsc-align-left>*[name='subheading'] {
+  place-self: start;
+  padding-right: 1em;
+}
+
+.layout-nhsc.nhsc-align-right {
+  display: grid;
+  grid-template-columns: auto 1fr minmax(var(--min-indent), var(--indent));
+  grid-template-areas:
+    "num heading empty"
+    "content content subheading"
+    "eop eop eop"
+}
+
+.layout-nhsc.nhsc-align-right>*[name='subheading'] {
+  place-self: start;
+  padding-left: 1em;
+}
+
+/* ---------------------------------------------------*/
+/*                                                    */
+/*                DOUBLE COLUMN                       */
+/*                                                    */
+/* ---------------------------------------------------*/
+.parallelViewContainer {
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+  /* grid-template-areas: "left right"; */
+  grid-auto-rows: auto;
+  /* align-items: start; */
+}
+
+.left {
+  /* grid-area: left; */
+  grid-column: 1;
+}
+
+.right {
+  /* grid-area: right; */
+  grid-column: 2;
+}
+
+
+/* -------------------------------------------------------------------------- */
+/*                                    Table                                   */
+/* -------------------------------------------------------------------------- */
+
+table {
+  outline: 0.1px dashed lightgray;
+}
+
+td {
+  outline: 0.1px dashed lightgray;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                     PDF                                    */
+/* -------------------------------------------------------------------------- */
+
+@media only print {
+
+  /* space between columns */
+  .parallelViewContainer {
+    column-gap: 4mm
+  }
+
+  /* dimension of logo */
+  .logo {
+    height: auto;
+    width: 100%;
+  }
+
+  /* space between conainers */
+  [pattern="container"] {
+    padding-bottom: 3mm;
+  }
+
+  /* remove the bookmark icon */
+  *[name="quotedStructure"]:after {
+    display: none;
+  }
+}
